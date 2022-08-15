@@ -1,0 +1,46 @@
+.single {
+	padding-top: 6.25rem;
+	background: #fff;
+
+	h1 {
+		font-size: 2.25rem;
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid #eaecef;
+		font-weight: 700;
+		margin-bottom: 2rem;
+	}
+
+	p, li, a {
+		font-weight: 400;
+		letter-spacing: .03rem;
+	}
+
+	img {
+		max-width: 480px;
+		width: 100%;
+		margin: .25rem 0 1rem;
+	}
+
+	.navbar {
+		box-shadow: 0 0px 0px 1px rgba(0,0,0,.1);
+	}
+
+	.breadcrumb {
+		margin-top: .5rem;
+		background: inherit;
+		padding: 0;
+	}
+
+	.breadcrumb li {
+		font-size: .875rem;
+	}
+	
+}
+
+@media (max-width: 768px) {
+
+	.single {
+		padding-top: 5.5rem;
+	}
+
+}

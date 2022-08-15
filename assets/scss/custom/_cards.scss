@@ -1,0 +1,23 @@
+.card {
+	margin-top: 0 !important;
+	margin-bottom: 24px;
+
+	&-title {
+		margin-top: 0.75rem;
+	}
+
+	&-heading {
+		padding: 8px 24px 12px;
+		border-bottom: 1px solid rgba(0,0,0,0.12);
+	}
+
+	&-content-1 {
+		padding: 1.5rem;
+	}
+
+	&-button {
+		padding: 0 8px;
+		border-top: 1px solid rgba(0,0,0,0.12);
+	}
+
+}

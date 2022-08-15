@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ site.baseurl }}/assets/img/avatar.png" type="image/png">
+
+        <!-- Open graph tags to customize link previews. -->
+        <meta property="og:url"           content="{{ site.url }}">
+        <meta property="og:type"          content="website">
+        <meta property="og:title"         content="{{ site.name }}">
+        <meta property="og:description"   content="{{ site.description }}">
+        <meta property="og:image"         content="{{ site.url }}/assets/img/avatar.png">
+
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/material-kit.css" />
+        <!-- <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/overrides.css" /> -->
+    </head>
+
+    <body id="page-top"{% if page.single %} class="single"{% endif %}>
+
+    <!-- Navbar -->
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+                    <div class="container-fluid px-0">
+                        <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ site.baseurl }}/index.html" rel="tooltip" title="Photobooth Project" data-placement="bottom" target="_blank">
+                            Photobooth Project
+                        </a>
+                        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon mt-2">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+                            <ul class="navbar-nav navbar-nav-hover ms-auto">
+                                <li class="nav-item dropdown dropdown-hover mx-2">
+                                    <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
+                                            Pages
+                                        <img src="{{ site.baseurl }}/assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
+                                        <div>
+                                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
+                                                <span>All</span>
+                                            </h6>
+                                            <a href="{{ site.baseurl }}/index.html" class="dropdown-item border-radius-md">
+                                                <span>Home</span>
+                                            </a>
+                                            <a href="{{ site.baseurl }}/news.html" class="dropdown-item border-radius-md">
+                                                <span>News</span>
+                                            </a>
+                                            <a href="{{ site.baseurl }}/downloads.html" class="dropdown-item border-radius-md">
+                                                <span>Downloads</span>
+                                            </a>
+                                            <a href="https://github.com/PhotoboothProject/photobooth/wiki" class="dropdown-item border-radius-md">
+                                                <span>Wiki</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item ms-lg-auto">
+                                    <a class="nav-link nav-link-icon me-2" href="https://github.com/PhotoboothProject" target="_blank">
+                                        <i class="fa fa-github me-1"></i>
+                                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Github</p>
+                                    </a>
+                                    <a class="nav-link nav-link-icon me-2" href="https://t.me/PhotoboothGroup" target="_blank">
+                                        <i class="fa fa-telegram me-1"></i>
+                                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Join us on Telegram">Telegram</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item my-auto ms-3 ms-lg-0">
+                                    <a href="https://github.com/PhotoboothProject/Photobooth" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Photobooth Source</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <div class="page-header">
+        </br>
+        </br>
+        </br>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="text-center text-black">
+                    <h1>Photobooth Project</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </br>
+    </br>
+
+
+    <div class="site-content">
+        {{ content }}
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <p class="footer-text">
+                        <a href="https://github.com/PhotoboothProject">PhotoboothProject</a> &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md">
+                    <div class="footer-icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="{{ site.baseurl }}/assets/js/core/popper.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/core/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+    <script src="{{ site.baseurl }}/assets/js/plugins/countup.min.js"></script>
+    <!--  Plugin for Parallax, full documentation here: https://github.com/dixonandmoe/rellax -->
+    <script src="{{ site.baseurl }}/assets/js/plugins/rellax.min.js"></script>
+    <!--  Plugin for TiltJS, full documentation here: https://gijsroge.github.io/tilt.js/ -->
+    <script src="{{ site.baseurl }}/assets/js/plugins/tilt.min.js"></script>
+    <!--  Plugin for Selectpicker - ChoicesJS, full documentation here: https://github.com/jshjohnson/Choices -->
+    <script src="{{ site.baseurl }}/assets/js/plugins/choices.min.js"></script>
+    <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+    <script src="{{ site.baseurl }}/assets/js/plugins/parallax.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/material-kit.js"></script>
+    </body>
+</html>

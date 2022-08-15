@@ -1,0 +1,35 @@
+.welcome {
+	padding: 2.5rem 2rem 3.5rem !important;
+}
+
+.jumbotron {
+	padding: 2.5rem 1rem;
+	border-radius: 0;
+
+	h1.bold {
+		font-weight: 500;
+	}
+
+	p, li {
+		font-size: 1rem;
+		line-height: 1.5em;
+		font-weight: 300;
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	.jumbotron {
+		padding-top: 2rem;
+
+		h1 {
+			font-size: 3rem;
+		}
+
+	}
+	.welcome {
+		padding: 2.25rem 1rem !important;
+	}
+	
+}

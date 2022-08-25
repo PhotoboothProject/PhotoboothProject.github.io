@@ -4,37 +4,19 @@ repository: PhotoboothProject/PhotoboothProject.github.io
 url: http://PhotoboothProject.github.io
 baseurl: ""
 
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-
-  -
-    scope:
-      path: "faq"
-    values:
-      layout: "faq_tutorial"
-      single: "true"
-
-permalink: none
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-
 plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-relative-links
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
-  - node_modules/
-  - assets/scss/
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - Index.md
+  - Changelog.md
+  - FAQ.md
+  - Installation-on-Debian.md
+  - Installation-on-Windows.md
+  - Update-Photobooth.md
+
+theme: jekyll-theme-tactile

@@ -1,0 +1,98 @@
+---
+title: Installation on Windows
+---
+
+<h3>Download needed files</h3>
+
+<ul>
+<li>Download Apache2 and Visual C++ Redistributable for Visual Studio: <a href='https://www.apachelounge.com/download'>https://www.apachelounge.com/download</a></li>
+<li>Download PHP 7.3.x or PHP 7.4.x (VC15 x64 Thread Safe): <a href='https://windows.php.net/download'>https://windows.php.net/download</a></li>
+<li>Download Digicamcontrol: <a href='http://digicamcontrol.com/download'>http://digicamcontrol.com/download</a></li>
+<li>Download Notepad++: <a href='https://notepad-plus-plus.org/downloads'>https://notepad-plus-plus.org/downloads</a></li>
+<li>Download latest Photobooth release: <a href='https://github.com/PhotoboothProject/photobooth/releases'>https://github.com/PhotoboothProject/photobooth/releases</a></li>
+</ul>
+
+<h3>Install &amp; extract needed Software</h3>
+
+<ul>
+<li>Install Notepad++</li>
+<li>Install Visual C++ Redistributable for Visual Studio</li>
+<li>Extract the Apache2 ZIP (httpd-2.4.X-winXX-XXXX.zip) to C:/</li>
+<li>Extract the PHP ZIP (php-7.X.XX-Win32-vc15-xXX.zip) to C:/php</li>
+</ul>
+
+<h3>Prepare Apache HTTP Server</h3>
+
+<p>Edit <code>C:\Apache24\conf\httpd.conf</code> using <strong>Notepad++</strong> <br /><br />Find the following text (~ on line 284):</p>
+
+<div class="highlight"><pre lang=""><IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+</pre></div>
+
+<p>And change it to  </p>
+
+<div class="highlight"><pre lang=""><IfModule dir_module>
+    DirectoryIndex index.html index.php
+</IfModule>
+</pre></div>
+
+<p>To the end of the file add the following:  </p>
+
+<div class="highlight"><pre lang="">LoadModule php7_module "C:/php/php7apache2_4.dll"
+<FilesMatch \.php$>
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+PHPIniDir "C:/php"
+</pre></div>
+
+<p>For reference see <a href="https://github.com/PhotoboothProject/photobooth/commit/f260b49d2029825d33eb9d35ceda3f19423418db">f260b49</a></p>
+
+<p>Inside <code>C:\Apache24\htdocs</code> add a new file called <code>info.php</code> and add the following content:  </p>
+
+<div class="highlight"><pre lang=""><?php
+phpinfo();
+?>
+
+</pre></div>
+
+<p>Inside C:\Apache24 create a new file called <code>cmd.bat</code> and add th following content:</p>
+
+<div class="highlight"><pre lang="">cd "C:\Apache24\bin"
+cmd
+</pre></div>
+
+<h3>Prepare PHP</h3>
+
+<p>Go to <code>C:\php</code> and rename the <code>php.ini-production</code> to <code>php.ini</code>.</p>
+
+<p>Edit the <code>php.ini</code> using <strong>Notepad++</strong> to enable the GD library: <br /><br />Find <code>;extension=fileinfo</code> and remove the <code>;</code> in front of the line. <br /><br />Find <code>;extension=gd2</code> and remove the <code>;</code> in front of the line. <br /><br />Find <code>;extension_dir = "ext"</code> and remove the <code>;</code> in front of the line and change it to <code>extension_dir = "C:/php/ext"</code>.</p>
+
+<p>For reference see <a href="https://github.com/PhotoboothProject/photobooth/commit/ff4259aece2094922c1d9b8fc2825fb44a710560">ff4259a</a></p>
+
+<h3>Start Apache Server</h3>
+
+<p>Go to <code>C:\Apache24</code> and right click on the cmd.bat, choose "Run as administrator": <br /><br />To start the Webserver on boot automatically, type <code>httpd.exe -k install</code>.</p>
+
+<p>Once that's done, lets start our webserver: <br /><br /><code>httpd.exe -k start</code></p>
+
+<p>If you need to stop the webserver (e.g. if you like to change the <code>php.ini</code>): <br /><br /><code>httpd.exe -k stop</code></p>
+
+<h3>Test your Webserver &amp; PHP</h3>
+
+<p>Open <a href="http://localhost/info.php"><a href='http://localhost/info.php'>http://localhost/info.php</a></a> in your Browser, you should see the PHP Information page.</p>
+
+<h3>Install Digicamcontrol</h3>
+
+<p>Install Digicamcontrol to <code>C:\Apache24\htdocs\digicamcontrol\</code></p>
+
+<h3>Setup Photobooth</h3>
+
+<p>Remove all files inside <code>C:\Apache24\htdocs\</code>. <br /><br />Next you need to extract the Photobooth Release-ZIP to <code>C:\Apache24\htdocs\</code>.  </p>
+
+<p>Open <a href="http://localhost/admin"><a href='http://localhost/admin'>http://localhost/admin</a></a> in your Browser and adjust your "<em>take picture command</em>" (inside the "<em>Commands</em>" section): <br /><br /><code>C:\Apache24\htdocs\digicamcontrol\CameraControlCmd.exe /capture /filename %s</code></p>
+
+<h3>Enjoy!</h3>
+
+<p>You should now be able to use Photobooth on your Windows machine!  </p>

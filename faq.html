@@ -1,0 +1,15 @@
+---
+title: FAQ - Frequently Asked Questions
+icon: question-circle-o
+---
+
+{% for post in site.data.faq %}
+<div class="card">
+    <div class="card-header">
+		<h4 class="card-title">{{ post.title }}</h4>
+    </div>
+    <div class="card-body">
+		{{ post.content | markdownify }}
+	</div>
+</div>
+{% endfor %}

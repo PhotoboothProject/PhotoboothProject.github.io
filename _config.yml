@@ -12,7 +12,7 @@ relative_links:
   collections: true
 
 include:
-  - Index.md
+  - index.md
   - Changelog.md
   - FAQ.md
   - Installation-on-Debian.md

@@ -1,15 +1,16 @@
 
 
 <a href="https://photoboothproject.github.io" class="button hidden">Home</a>
-<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
+<a href="https://photoboothproject.github.io/Changelog" class="button hidden">Changelog</a>
 <a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
+<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
 
 ---
 
 ### Updating Photobooth on Raspbian
 
 #### Updating from v1.9.x or older
-To update from an old version to v2.x or to v3.x it's recommend to [make a clean installalation](home#installation).
+To update from an old version to v2.x or to v3.x it's recommend to [make a clean installalation](INSTALL).
 
 
 #### Updating from v2.x or v3.x

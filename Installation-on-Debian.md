@@ -1,8 +1,9 @@
 
 
 <a href="https://photoboothproject.github.io" class="button hidden">Home</a>
-<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
+<a href="https://photoboothproject.github.io/Changelog" class="button hidden">Changelog</a>
 <a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
+<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
 
 ---
 

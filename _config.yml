@@ -22,6 +22,8 @@ include:
   - Installation-on-Debian.md
   - Installation-on-Windows.md
   - Update-Photobooth.md
-  - INSTALL_MENU.md
+  - INSTALL.md
+  - Install.md
+  - install.md
 
 theme: jekyll-theme-primer

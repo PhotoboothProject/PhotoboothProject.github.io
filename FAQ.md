@@ -36,11 +36,11 @@ reboot
 
 Once done you need to adjust the configuration. Open the admin panel in your browser [localhost/admin](http://localhost/admin) and make the following changes:
 
-**"Take picture command on Pi OS based on bullseye":** 
+**"Take picture command on Pi OS based on bullseye":**
 
 `libcamera-still -n -o %s -q 100 -t 1 | echo Done`
 
-**"Take picture command on Pi OS based on buster":** 
+**"Take picture command on Pi OS based on buster":**
 
 `raspistill -n -o %s -q 100 -t 1 | echo Done`
 
@@ -50,7 +50,9 @@ Once done you need to adjust the configuration. Open the admin panel in your bro
 `Done`
 
 Pi Camera works with these config changes (also works together with preview at countdown if enabled).
+
 Raspistill / libcamera-still does not give any feedback after the picture was taken, workaround for that with "echo".
+
 (Thanks to Andreas Maier for that information)
 
 You've the possibility to add more parameters if needed (define ISO, exposure, white balance etc.). Type `raspistill -?` / `libcamera-still -?`in your terminal to get information about possible parameters / settings.
@@ -59,7 +61,7 @@ You've the possibility to add more parameters if needed (define ISO, exposure, w
 
 ### I've found a bug, how can I report?
 
-Please take a look at the issue page [here](https://github.com/PhotoboothProject/photobooth/issues) , if your bug isn't mentioned already you can create a new issue. Please give informations detailed as possible to reproduce and analyse the problem.
+Please take a look at the issue page [here](https://github.com/PhotoboothProject/photobooth/issues), if your bug isn't mentioned already you can create a new issue. Please give informations detailed as possible to reproduce and analyse the problem.
 
 ---
 
@@ -89,9 +91,35 @@ Open `http://localhost/admin` in your Webbrowser and change the configuration fo
 
 ---
 
+### How to update or add translations?
+
+#### On v2.3.0 and newer:
+
+Photobooth joined Crowdin as localization manager, [join here](https://crowdin.com/project/photobooth) to translate Photobooth.
+
+Crowdin gives a nice webinterface to make translating easy as possible. If there's different translations for a string, translator can use the vote function on suggested translations.
+
+With Crowdin and your help translating we're able to get high-quality translations for all supported languages. Also it's easy to support a wider range of languages!
+
+Your language is missing? Don't worry, create a [localization request here](https://github.com/PhotoboothProject/photobooth/issues/new/choose) and we'll add it to the project.
+
+#### On v2.2.0 and older:
+
+Edit the language file inside `resources/lang/` with your favorite text editor.
+
+Once you're done upload your changes and create a [pull request](https://github.com/PhotoboothProject/photobooth/pulls).
+
+---
+
+### How can I test my current photo settings?
+
+Open [http://localhost/test/photo.php](http://localhost/test/photo.php) in your Webbrowser and a you can find a photo that is created with your current settings.
+
+---
+
 ### How can I test my current collage settings?
 
-Open `http://localhost/test/collage.php` in your Webbrowser and a you can find a collage that is created with your current settings.
+Open [http://localhost/test/collage.php](http://localhost/test/collage.php) in your Webbrowser and a you can find a collage that is created with your current settings.
 
 ---
 
@@ -168,23 +196,30 @@ Follow the steps mentioned here: [How to Fix NGINX 413 Request Entity Too Large 
 Yes, there's different ways!
 
 #### Key code using connected HID devices
+
 An HID device connected to your hardware can trigger different actions on your device. The HID device must be connected to the device you're accessing Photobooth from!
 
 For example use <a href="https://keycode.info" target="_blank">https://keycode.info</a> to find out the key id of the button you like to use.
 
 - Related configuration:
+
   **PICTURE section**:
+
   - Key code which triggers a picture: **define**
 
   **COLLAGE section**:
+
   - Key code which triggers a collage: **define**
 
   **PRINT section**:
+
   - Key code which triggers printing: **define**
 
 #### Remotebuzzer Hardware Button feature using GPIO connected hardware (Raspberry Pi only)
-The **Hardware Button** feature enables to control Photobooth through hardware buttons connected to Raspberry GPIO pins. This works for directly connected screens and as well for WLAN connected screen (i.e. iPad). Configuration takes place in the admin settings - Hardware Button section.  
-Using the Remotebuzzer feature makes the button action taking effect at the same time on all devices accessing Photobooth!  
+
+The **Hardware Button** feature enables to control Photobooth through hardware buttons connected to Raspberry GPIO pins. This works for directly connected screens and as well for WLAN connected screen (i.e. iPad). Configuration takes place in the admin settings - Hardware Button section.
+
+Using the Remotebuzzer feature makes the button action taking effect at the same time on all devices accessing Photobooth!
 
 The Hardware Button functionality supports two separate modes of operation (select via admin panel):
 
@@ -206,7 +241,7 @@ Having trouble?
 - Check the server logs for errors at the Debug panel: [http://localhost/admin/debugpanel.php](http://localhost/admin/debugpanel.php)
 - If there is no errors logged but hardware buttons still do not trigger:
   - GPIO interrupts might be disabled. Check file `/boot/config.txt` and remove / disable the following overlay `dtoverlay=gpio-no-irq` to enable interrupts for GPIOs.
-  - GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting. 
+  - GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting.
     ```
     gpio=16,17,20,21,22,26,27=pu
     ```
@@ -229,7 +264,7 @@ The server supports up to four connected hardware buttons for the following func
 - Short button press (default <= 2 sec) will trigger a single picture in Photobooth
 - Long button press (default > 2 sec) will trigger a collage in Photobooth
 
-Note:
+**Note:**
 
  -  If collage is configured with interruption, next button presses will trigger the next collage pictures. 
  -  If collage is disabled in the admin settings, long button press also triggers a single picture
@@ -427,7 +462,8 @@ If you access Photobooth on your Raspberry Pi you could use a Raspberry Pi Camer
 
 #### Preview _"from URL"_
 
-If you like to have the same preview independent of the device you access Photobooth from:  
+If you like to have the same preview independent of the device you access Photobooth from:
+
 Make sure to have a stream available you can use (e.g. from your Webcam, Smartphone Camera or Raspberry Pi Camera)
 
 - Admin panel config *"Preview mode"*: `from URL`
@@ -446,7 +482,8 @@ A preview can also be done using the video mode of your DSLR (Linux only), but o
 - Liveview **must** be supported for your camera model, [check here](http://gphoto.org/proj/libgphoto2/support.php)
 - install all dependencies `sudo apt install ffmpeg v4l2loopback-dkms v4l-utils -y`
 - create a virtual webcam `sudo modprobe v4l2loopback exclusive_caps=1 card_label="GPhoto2 Webcam"`
-  - `/dev/video0` is used by default, you can use `v4l2-ctl --list-devices` to check which `/dev/*` is the correct one:  
+  - `/dev/video0` is used by default, you can use `v4l2-ctl --list-devices` to check which `/dev/*` is the correct one:
+
     If it doesn't match the default setup you need to adjust the `Command to generate a live preview` inside the admin panel!
 - Give permissions to /dev/video* `sudo gpasswd -a www-data video` (this was done automatically if you used the installation script) and reboot once
 - Admin panel config *"Preview mode"*: `from gphoto2`
@@ -488,11 +525,9 @@ Yes you can. There's different ways depending on your needs and personal setup:
     sudo apt-get install -y motion
     ```
 
-    _/etc/motion/motion.conf_ needs to be changed to your needs (e.g. starting on boot, using videoX, resolution 
-    etc.).
+    _/etc/motion/motion.conf_ needs to be changed to your needs (e.g. starting on boot, using videoX, resolution, etc.).
 
-    If you're accessing Photobooth from an external device (e.g. Tablet or Mobile Phone) replace `127.0.0.1` 
-    with your IP-Adress.
+    If you're accessing Photobooth from an external device (e.g. Tablet or Mobile Phone) replace `127.0.0.1` with your IP-Adress.
 
     For reference:
     [https://github.com/andreknieriem/photobooth/pull/20](https://github.com/andreknieriem/photobooth/pull/20)
@@ -502,7 +537,9 @@ Yes you can. There's different ways depending on your needs and personal setup:
 ### How to get better performance using gphoto2 as preview?
 
 By now the DSLR handling of Photobooth on Linux was done exclusively using `gphoto2 CLI` (command line interface). When taking pictures while using preview video from the same camera one command has to be stopped and another one is run after that.
+
 The computer terminates the connection to the camera just to reconnect immediately. Because of that there was an ugly video gap and the noises of the camera could be irritating as stopping the video sounded very similar to taking a picture. But most cameras can shoot quickly from live-view...
+
 The underlying libery of `gphoto2 CLI` is `libgphoto` and it can be accessed using several programming languages. Because of this we can have a python script that handles both preview and taking pictures without terminating the connection to the camera in between.
 
 To try using `gphoto-python` first execute `install-gphoto-python.sh` from the Photobooth installation subdirectory `gphoto`.
@@ -592,26 +629,6 @@ Open `chrome://flags` in your browser.
 Look for *"Accelerated 2D canvas"* and change it to `"disabled"`.
 
 Now restart your Chromium browser.
-
----
-
-### How to update or add translations?
-
-#### On v2.3.0 and newer:
-
-Photobooth joined Crowdin as localization manager, [join here](https://crowdin.com/project/photobooth) to translate Photobooth.
-
-Crowdin gives a nice webinterface to make translating easy as possible. If there's different translations for a string, translator can use the vote function on suggested translations.
-
-With Crowdin and your help translating we're able to get high-quality translations for all supported languages. Also it's easy to support a wider range of languages!
-
-Your language is missing? Don't worry, create a [localization request here](https://github.com/PhotoboothProject/photobooth/issues/new/choose) and we'll add it to the project.
-
-#### On v2.2.0 and older:
-
-Edit the language file inside `resources/lang/` with your favorite text editor.
-
-Once you're done upload your changes and create a [pull request](https://github.com/PhotoboothProject/photobooth/pulls).
 
 ---
 

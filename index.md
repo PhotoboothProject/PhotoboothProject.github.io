@@ -10,6 +10,21 @@
 
 ---
 
+
+
+---
+## Contribute to this Webpage
+Clone the _PhotoboothProject.github.io_ project from github. Run the following commands from your Terminal:
+
+```sh
+git clone https://github.com/PhotoboothProject/PhotoboothProject.github.io.git
+cd PhotoboothProject.github.io
+```
+
+Make your changes, upload them to your fork and create a [pull request](https://github.com/PhotoboothProject/PhotoboothProject.github.io/pulls).
+
+---
+
 ## Changelog
 View all version changes [here](changelog).
 

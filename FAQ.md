@@ -19,12 +19,14 @@ Yes it is.
 
 Enable camera support using the `raspi-config` program you will have used when you first set up your Raspberry Pi.
 
-`sudo raspi-config`
+```sh
+sudo raspi-config
+```
 
 Use the cursor keys to select and open Interfacing Options, and then select Camera and follow the prompt to enable the camera.
 
 Now you need to allow the webserver to use `raspistill` / `libcamera-still`. You need add the webserver user to video group and reboot once:  
-```
+```sh
 sudo gpasswd -a www-data video
 reboot
 ```
@@ -179,18 +181,15 @@ Troubleshooting / Debugging:
   - If there is no errors logged but hardware buttons still do not trigger:
     - GPIO interrupts might be disabled. Check file `/boot/config.txt` and remove / disable the following overlay `dtoverlay=gpio-no-irq` to enable interrupts for GPIOs.
     - GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting. 
-
-    ```
-gpio=16,17,20,21,22,26,27=pu
-    ```
-
+        ```
+        gpio=16,17,20,21,22,26,27=pu
+        ```
     - For the Shutdown button to work, `www-data` needs to have the necessary sudo permissions. This is done by the `install-photobooth.sh` script or can be manually added as
-
-    ```sh
-cat >> /etc/sudoers.d/020_www-data-shutdown << EOF
-www-data ALL=(ALL) NOPASSWD: /sbin/shutdown
-EOF
-    ```
+        ```sh
+        cat >> /etc/sudoers.d/020_www-data-shutdown << EOF
+        www-data ALL=(ALL) NOPASSWD: /sbin/shutdown
+        EOF
+        ```
 
 As of Photobooth v3, hardware button support is fully integrated into Photobooth. Therefore the `button.py` script has been removed from the distribution. In case you are using this script and for continued backward compatibility please do not activate the Remote Buzzer Hardware Button feature in the admin GUI. Please note that continued backward compatibility is not guaranteed and in case of issues please switch to the integrated functionality.
 
@@ -307,11 +306,11 @@ These trigger URLs can be used for example with [myStrom WiFi Buttons](https://m
 - Be sure to connect the button to the same network as the photobooth
 - The button can be configured using the following commands
 
-```sh
-curl --location -g --request POST http://[Button IP]/api/v1/action/single --data-raw get://[Photobooth IP]:[Hardware Button Server Port]/commands/start-picture
+    ```sh
+    curl --location -g --request POST http://[Button IP]/api/v1/action/single --data-raw get://[Photobooth IP]:[Hardware Button Server Port]/commands/start-picture
 
-curl --location -g --request POST http://[Button IP]/api/v1/action/long --data-raw get://[Photobooth IP]:[Hardware Button Server Port]/commands/start-collage
-```
+    curl --location -g --request POST http://[Button IP]/api/v1/action/long --data-raw get://[Photobooth IP]:[Hardware Button Server Port]/commands/start-collage
+    ```
 
 <hr>
 
@@ -441,15 +440,15 @@ Yes you can. There's different ways depending on your needs and personal setup:
     Example:
 
     ```sh
--   url(../img/bg.jpg)
-+   url(http://127.0.0.1:8081)
+    -   url(../img/bg.jpg)
+    +   url(http://127.0.0.1:8081)
     ```
 
     To use a Raspberry Pi Camera module Motion is required, but you won't be able to use the Raspberry Pi Camera 
     for preview at countdown!
 
     ```sh
-sudo apt-get install -y motion
+    sudo apt-get install -y motion
     ```
 
     _/etc/motion/motion.conf_ needs to be changed to your needs (e.g. starting on boot, using videoX, resolution 

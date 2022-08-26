@@ -244,7 +244,7 @@ sudo /etc/init.d/cups restart
 
 ### Install Remote Buzzer support
 Please follow the steps mentioned in the FAQ:
-* **Q:** [Can I use Hardware Button on my Raspberry Pi, to take a Picture?](FAQ#can-i-use-hardware-button-on-my-raspberry-pi-to-take-a-picture)
+* **Q:** [Can I use Hardware Button to take a Picture?](FAQ#can-i-use-hardware-button-to-take-a-picture)
 
 ### Try it out
 

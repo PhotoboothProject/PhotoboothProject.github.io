@@ -31,7 +31,7 @@ View all version changes [here](Changelog).
 
 ---
 
-## Latest Updates
+## News
 ### 17 August 2022
 Photobooth source moved!
 

@@ -1,4 +1,5 @@
 name: PhotoboothProject
+title: Photobooth Project
 description: OpenSource Photobooth web interface for Linux and Windows.
 repository: PhotoboothProject/PhotoboothProject.github.io
 url: http://PhotoboothProject.github.io
@@ -19,4 +20,4 @@ include:
   - Installation-on-Windows.md
   - Update-Photobooth.md
 
-theme: jekyll-theme-tactile
+theme: jekyll-theme-primer

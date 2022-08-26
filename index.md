@@ -5,6 +5,18 @@
 <a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
 <a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
 
+[![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-blue.svg)](https://t.me/PhotoboothGroup)   [![Translate on Crowdin](https://img.shields.io/badge/Traslate%20on-Crowdin-green.svg)](https://crowdin.com/project/photobooth)
+
+_Latest stable release:_
+
+[![Lint](https://github.com/PhotoboothProject/photobooth/workflows/Lint/badge.svg?branch=stable3)](https://github.com/PhotoboothProject/photobooth/actions?query=branch%3Astable3+workflow%3ALint)
+[![gulp-sass](https://github.com/PhotoboothProject/photobooth/workflows/gulp-sass/badge.svg?branch=stable3)](https://github.com/PhotoboothProject/photobooth/actions?query=branch%3Astable3+workflow%3Agulp-sass)
+
+_Latest development version:_
+
+[![Lint](https://github.com/PhotoboothProject/photobooth/workflows/Lint/badge.svg?branch=dev)](https://github.com/PhotoboothProject/photobooth/actions?query=branch%3Adev+workflow%3ALint)
+[![gulp-sass](https://github.com/PhotoboothProject/photobooth/workflows/gulp-sass/badge.svg?branch=dev)](https://github.com/PhotoboothProject/photobooth/actions?query=branch%3Adev+workflow%3Agulp-sass)
+
 ---
 
 ![](resources/img/start.png)

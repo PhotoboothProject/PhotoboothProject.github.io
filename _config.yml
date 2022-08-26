@@ -16,8 +16,10 @@ include:
   - index.md
   - Changelog.md
   - FAQ.md
+  - FAQ_MENU.md
   - Installation-on-Debian.md
   - Installation-on-Windows.md
   - Update-Photobooth.md
+  - INSTALL_MENU.md
 
 theme: jekyll-theme-primer

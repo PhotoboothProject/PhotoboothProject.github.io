@@ -1,3 +1,11 @@
+
+
+<a href="https://photoboothproject.github.io" class="button hidden">Home</a>
+<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
+<a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
+
+---
+
 ## Automated installation on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:
 To make the installation as simple as possible, we have created an installation script for you. It will setup your Raspberry Pi, Computer or Laptop as a full blown Photobooth (using Apache Webserver). This means, Photobooth and all needed packages and dependencies get installed and the automatic camera mount is disabled. On a Raspberry Pi you can choose that Photobooth is started in fullscreen on startup.
 

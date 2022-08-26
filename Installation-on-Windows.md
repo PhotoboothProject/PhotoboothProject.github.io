@@ -1,3 +1,11 @@
+
+
+<a href="https://photoboothproject.github.io" class="button hidden">Home</a>
+<a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
+<a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
+
+---
+
 ## Installation on Windows
 
 ### Download needed files

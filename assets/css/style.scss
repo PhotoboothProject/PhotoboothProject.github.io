@@ -1,0 +1,16 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: white;
+    background-color: #0366d6;
+    padding: 10px;
+    border-radius: 5px;
+}

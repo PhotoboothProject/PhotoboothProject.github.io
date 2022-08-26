@@ -107,14 +107,17 @@ Add `--keep` (or `--keep-raw` to keep only the raw version on camera) option for
 ```sh
 gphoto2 --capture-image-and-download --keep --filename=%s
 ```
+
 On some cameras you also need to define the capturetarget because Internal RAM is used to store captured picture. To do this use `--set-config capturetarget=X` option for gphoto2 (replace "X" with the target of your choice):
 ```sh
 gphoto2 --set-config capturetarget=1 --capture-image-and-download --keep --filename=%s
 ```
+
 To know which capturetarget needs to be defined you need to run:
 ```sh
 gphoto2 --get-config capturetarget
 ```
+
 Example:
 ```
 pi@raspberrypi:~ $ gphoto2 --get-config capturetarget
@@ -177,17 +180,17 @@ Troubleshooting / Debugging:
     - GPIO interrupts might be disabled. Check file `/boot/config.txt` and remove / disable the following overlay `dtoverlay=gpio-no-irq` to enable interrupts for GPIOs.
     - GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting. 
 
-```
+    ```
 gpio=16,17,20,21,22,26,27=pu
-```
+    ```
 
     - For the Shutdown button to work, `www-data` needs to have the necessary sudo permissions. This is done by the `install-photobooth.sh` script or can be manually added as
 
-```sh
+    ```sh
 cat >> /etc/sudoers.d/020_www-data-shutdown << EOF
 www-data ALL=(ALL) NOPASSWD: /sbin/shutdown
 EOF
-```
+    ```
 
 As of Photobooth v3, hardware button support is fully integrated into Photobooth. Therefore the `button.py` script has been removed from the distribution. In case you are using this script and for continued backward compatibility please do not activate the Remote Buzzer Hardware Button feature in the admin GUI. Please note that continued backward compatibility is not guaranteed and in case of issues please switch to the integrated functionality.
 
@@ -317,6 +320,7 @@ Add the autostart file:
 ```sh
 sudo nano /etc/xdg/autostart/photobooth.desktop
 ```
+
 now add the following lines:
 ```
 [Desktop Entry]
@@ -341,15 +345,17 @@ The flag `--use-gl=egl` might only be needed on a Raspberry Pi to avoid a white 
 #### How to hide the mouse cursor, disable screen blanking and screen saver?
 There are two options to hide the cursor. The first approach allows you to show the cursor for a short period of time (helpful if you use a mouse and just want to hide the cursor of some time of inactivity), or to hide it permanently.
 
-**Solution A**
+**Solution A**  
 To hide the Mouse Cursor we'll use "unclutter":
 ```sh
 sudo apt-get install unclutter
 ```
+
 Edit the LXDE Autostart Script:
 ```sh
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
+
 and add the following lines:
 ```
 # Photobooth
@@ -365,7 +371,7 @@ and add the following lines:
 # Photobooth End
 ```
 
-**Solution B**
+**Solution B**  
 If you are using LightDM as display manager, you can edit `/etc/lightdm/lightdm.conf` to hide the cursor permanently. Just add `xserver-command=X -nocursor` to the end of the file.
 
 <hr>
@@ -433,23 +439,26 @@ Yes you can. There's different ways depending on your needs and personal setup:
 
 2. You need to change the background URL path via config or admin panel. Replace `url(../img/bg.jpg)` with your IP-Adress and port (if needed) as URL.
     Example:
-    ```
-    -   url(../img/bg.jpg)
-    +   url(http://127.0.0.1:8081)
+
+    ```sh
+-   url(../img/bg.jpg)
++   url(http://127.0.0.1:8081)
     ```
 
     To use a Raspberry Pi Camera module Motion is required, but you won't be able to use the Raspberry Pi Camera 
     for preview at countdown!
+
     ```sh
-    sudo apt-get install -y motion
+sudo apt-get install -y motion
     ```
-    /etc/motion/motion.conf needs to be changed to your needs (e.g. starting on boot, using videoX, resolution 
+
+    _/etc/motion/motion.conf_ needs to be changed to your needs (e.g. starting on boot, using videoX, resolution 
     etc.).
     If you're accessing Photobooth from an external device (e.g. Tablet or Mobile Phone) replace `127.0.0.1` 
     with your IP-Adress.
 
     For reference:
-    https://github.com/andreknieriem/photobooth/pull/20
+    [https://github.com/andreknieriem/photobooth/pull/20](https://github.com/andreknieriem/photobooth/pull/20)
 
 <hr>
 
@@ -462,24 +471,29 @@ To try using `gphoto-python` first execute `install-gphoto-python.sh` from the P
 ```sh
 sudo bash gphoto/install-gphoto-python.sh
 ```
+
 After that just change your commands to use the python script. For Live preview use:
 ```
 python3 cameracontrol.py
 ```
+
 And for the take picture command:
 ```
 python3 cameracontrol.py --capture-image-and-download %s
 ```
+
 There's no need for a command to end the live preview. So just empty that field.
 
 As you possibly noticed the params of the script are designed to be similar to the ones of `gphoto2 CLI` but with some shortcuts like `-c` for `--capture-image-and-download`. If you want to know more check out the help of the script by running:
 ```
 python3 cameracontrol.py --help
 ```
+
 If you want to keep your images on the camera you need to use the same `capturetarget` config as when you were using `gphoto CLI` (see "How to keep pictures on my Camera using gphoto2?"). Set the config on the preview command like this:
 ```
 python3 cameracontrol.py --set-config capturetarget=1
 ```
+
 If you don't want to use the DSLR view as background video enable the respective setting of Photobooth and add `--bsm` to the preview command. The preview video is activated when the countdown for a photo starts and after taking a picture the video is deactivated while waiting for the next photo.
 
 If you get errors from Photobooth and want to get more information try to run the preview command manually. The script is in Photobooth's `api` folder. To do so end all running services that potentially try to access the camera with `killall gphoto2` and `killall python3` (if you added any other python scripts manually you might have to be a bit more selective than this command).
@@ -598,7 +612,6 @@ Use the `install-photobooth.sh` script to get the operating system setup in plac
 ```sh
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/enable-usb-sync.sh
 sudo bash enable-usb-sync.sh
-
 ```
 
 The target USB device is selected through the admin panel.
@@ -669,9 +682,10 @@ Terminal=false
 ```
 
 If you want to use the touchscreen as photobooth and the second monitor for the standalone slideshow for example, open the autostart file:
-```
+```sh
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
+
 and enter/adjust the @chromium-browser entries as followed (adjust the value _1920_ to your own resolution and URL if necessary):
 ```
 @chromium-browser --new-window --start-fullscreen --kiosk http://localhost --window-position=1920,0 --user-data-dir=Default

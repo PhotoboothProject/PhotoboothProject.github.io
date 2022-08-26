@@ -459,7 +459,7 @@ The underlying libery of `gphoto2 CLI` is `libgphoto` and it can be accessed usi
 
 To try using `gphoto-python` first execute `install-gphoto-python.sh` from the Photobooth installation subdirectory `gphoto`.
 ```sh
-bash gphoto/install-gphoto-python.sh
+sudo bash gphoto/install-gphoto-python.sh
 ```
 After that just change your commands to use the python script. For Live preview use:
 ```

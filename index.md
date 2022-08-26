@@ -1,7 +1,5 @@
-# Photobooth-Wiki
 
-A Photobooth webinterface for Raspberry Pi and Windows.
-
+---
 
 ## Latest Updates
 ### 17 August 2022
@@ -13,8 +11,11 @@ Currently we’re preparing this webpage for you with all needed information. Al
 
 Stay tuned!
 
+---
 
 ![](resources/img/start.png)
+
+---
 
 ## Installation
 
@@ -22,9 +23,13 @@ Stay tuned!
 * [Installation on Debian / Debian based distributions](Installation-on-Debian#installation-on-debian--debian-based-distributions)
 * [Installation on Windows](Installation-on-Windows)
 
+---
+
 ## Update Photobooth
 
 * [Update Photobooth](Update-Photobooth)
+
+---
 
 ## FAQ - Frequently asked questions
 
@@ -54,32 +59,13 @@ Stay tuned!
 * **Q:** [Raspberry Touchpanel DSI simultaneously with HDMI](FAQ#raspberry-touchpanel-dsi-simultaneously-with-hdmi)
 * **Q:** [How to administer CUPS remotely using the web interface?](FAQ#how-to-administer-cups-remotely-using-the-web-interface)
 
+---
+
 ## Changelog
 View all version changes [here](changelog).
+
+---
 
 ## Tutorials
 
 * [How to setup a Raspberry Pi as an access point](RPi-as-access-point)
-
-## Clone this Wiki
-Get a copy of this Wiki to always have the FAQ, Changelog etc. with you. Run the following command from your Terminal:
-
-`git clone https://github.com/PhotoboothProject/photobooth.wiki.git`
-
-To update your local Wiki copy with latest changes you only need to run `git pull` from Terminal.
-
-## Contribute to this Wiki
-Clone the Photobooth project from github and make changes to the `wiki` branch. Run the following command from your Terminal:
-
-```
-git clone https://github.com/PhotoboothProject/photobooth.git
-cd photobooth
-git fetch origin
-git checkout origin/wiki
-```
-
-Make your changes, upload them to your fork and create a [pull request](https://github.com/PhotoboothProject/photobooth/pulls).
-
-
-#### Wiki History
-View all changes made in this Wiki [here](_history).

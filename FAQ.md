@@ -546,7 +546,7 @@ To try using `gphoto-python` first execute `install-gphoto-python.sh`.
 
 ```sh
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/gphoto/install-gphoto-python.sh
-sudo bash gphoto/install-gphoto-python.sh
+sudo bash install-gphoto-python.sh
 ```
 
 After that just change your commands to use the python script. For Live preview use:

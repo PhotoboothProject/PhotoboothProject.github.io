@@ -542,7 +542,7 @@ The computer terminates the connection to the camera just to reconnect immediate
 
 The underlying libery of `gphoto2 CLI` is `libgphoto` and it can be accessed using several programming languages. Because of this we can have a python script that handles both preview and taking pictures without terminating the connection to the camera in between.
 
-To try using `gphoto-python` first execute `install-gphoto-python.sh` from the Photobooth installation subdirectory `gphoto`.
+To try using `gphoto-python` first execute `install-gphoto-python.sh`.
 
 ```sh
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/gphoto/install-gphoto-python.sh

@@ -28,8 +28,17 @@ sudo bash install-photobooth.sh -u='pi'
 ```
 
 By default Apache is used for an easy and no-hassle setup as NGINX and Lighttpd need some additional steps.
-To use NGINX run `sudo bash install-photobooth.sh -w="nginx"` (additional Setup note: [Cromakeying is saving without finishing saving](FAQ#cromakeying-is-saving-without-finishing-saving) ),
-To use Lighttpd as Webserver run `sudo bash install-photobooth.sh -w="lighttpd"`.  
+To use NGINX run
+```sh
+sudo bash install-photobooth.sh -w='nginx'
+```
+
+(additional Setup note: [Cromakeying is saving without finishing saving](FAQ#cromakeying-is-saving-without-finishing-saving) ).
+
+To use Lighttpd as Webserver run
+```sh
+sudo bash install-photobooth.sh -w='lighttpd'
+```
 
 Flags can be combined:  
 ```sh
@@ -54,6 +63,7 @@ sudo apt dist-upgrade
 Currently NGINX, Lighttpd and Apache Webserver are supported.
 For an easy and no-hassle setup you should install Apache Webserver.
 NGINX has a smaller memory footprint and typically better performance, which is especially important on the Raspberry Pis, but it needs some additional steps until you're good to go. Also Lighttpd needs some additional steps.
+
 
 #### Install Apache & PHP
 
@@ -129,6 +139,7 @@ sudo systemctl reload nginx
 ```
 
 </details>
+
 
 #### or Install Lighttpd & PHP
 
@@ -216,6 +227,7 @@ chmod +x gphoto2-updater.sh
 sudo ./gphoto2-updater.sh
 ```
 
+
 ### Install photobooth
 
 Give our webserver user access to `/var/www/`:
@@ -260,6 +272,7 @@ To remote access CUPS from other clients you need to run the following commands:
 sudo cupsctl --remote-any
 sudo /etc/init.d/cups restart
 ```
+
 
 ### Install Remote Buzzer support
 

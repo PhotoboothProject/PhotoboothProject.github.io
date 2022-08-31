@@ -545,6 +545,7 @@ The underlying libery of `gphoto2 CLI` is `libgphoto` and it can be accessed usi
 To try using `gphoto-python` first execute `install-gphoto-python.sh` from the Photobooth installation subdirectory `gphoto`.
 
 ```sh
+wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/gphoto/install-gphoto-python.sh
 sudo bash gphoto/install-gphoto-python.sh
 ```
 
@@ -564,8 +565,14 @@ There's no need for a command to end the live preview. So just empty that field.
 
 As you possibly noticed the params of the script are designed to be similar to the ones of `gphoto2 CLI` but with some shortcuts like `-c` for `--capture-image-and-download`. If you want to know more check out the help of the script by running:
 
+```sh
+python3 /var/www/html/api/cameracontrol.py --help
 ```
-python3 cameracontrol.py --help
+
+or on subfolder installation of Photobooth
+
+```sh
+python3 /var/www/html/photobooth/api/cameracontrol.py --help
 ```
 
 If you want to keep your images on the camera you need to use the same `capturetarget` config as when you were using `gphoto CLI` (see "How to keep pictures on my Camera using gphoto2?"). Set the config on the preview command like this:

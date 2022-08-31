@@ -287,8 +287,9 @@ Now you should restart your Raspberry Pi to apply those settings:
 reboot
 ```
 
-Please use the following to test if your Webserver is able to take pictures:
+Please use the following to test if your Webserver is able to take pictures (gphoto must be executed in a dir with write permission):
 ```sh
+cd /var/www/html
 sudo -u www-data gphoto2 --capture-image
 ```
 

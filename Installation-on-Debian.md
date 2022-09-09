@@ -11,41 +11,43 @@
 
 To make the installation as simple as possible, we have created an installation script for you. It will setup your Raspberry Pi, Computer or Laptop as a full blown Photobooth (using Apache Webserver). This means, Photobooth and all needed packages and dependencies get installed and the automatic camera mount is disabled. On a Raspberry Pi you can choose that Photobooth is started in fullscreen on startup.
 
-If you encounter any issues or want more freedom to configure your Pi, Computer or Laptop, we recommend you look at the detailed installation instruction below.  
+If you encounter any issues or want more freedom to configure your Pi, Computer or Laptop, we recommend you look at the detailed installation instruction below.
+
 The installation script is intendet to work on Raspberry Pi OS based on Debian bullseye (released October 2021), but it should also work on Raspberry Pi OS based on Debian buster.
 
-**Note:** If you are using an older version of Rasperry Pi OS or Debian / Debian based distribution Node.js v12.22.x will be installed if needed!  
+**Note:** If you are using an older version of Rasperry Pi OS or Debian / Debian based distribution Node.js v12.22.x will be installed if needed!
 
 ```sh
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/install-photobooth.sh
 sudo bash install-photobooth.sh
 ```
 
-On a Raspberry Pi, a username is needed to install all Pi specific options. Your OS username can be passed by the `-u` flag to the installer.  
+On a Raspberry Pi, a username is needed to install all Pi specific options. Your OS username can be passed by the `-username` flag to the installer.
+
 For the user "pi", the command to install Photobooth needs to be:
 ```sh
-sudo bash install-photobooth.sh -u='pi'
+sudo bash install-photobooth.sh -username='pi'
 ```
 
 By default Apache is used for an easy and no-hassle setup as NGINX and Lighttpd need some additional steps.
 To use NGINX run
 ```sh
-sudo bash install-photobooth.sh -w='nginx'
+sudo bash install-photobooth.sh -webserver='nginx'
 ```
 
 (additional Setup note: [Cromakeying is saving without finishing saving](FAQ#cromakeying-is-saving-without-finishing-saving) ).
 
 To use Lighttpd as Webserver run
 ```sh
-sudo bash install-photobooth.sh -w='lighttpd'
+sudo bash install-photobooth.sh -webserver='lighttpd'
 ```
 
-Flags can be combined:  
+Flags can be combined:
 ```sh
-sudo bash install-photobooth.sh -u='pi' -w='nginx'
+sudo bash install-photobooth.sh -username='pi' -webserver='nginx'
 ```
 
-To get to know all options you can simply run `sudo bash install-photobooth.sh -h`.
+To get to know all options you can simply run `sudo bash install-photobooth.sh -help`.
 
 
 ## Manually install Photobooth on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:
@@ -266,7 +268,8 @@ sudo gpasswd -a www-data lp
 sudo gpasswd -a www-data lpadmin
 ```
 
-By default the CUPS webinterface can only be accessed via [http://localhost:631](http://localhost:631) from your local machine.  
+By default the CUPS webinterface can only be accessed via [http://localhost:631](http://localhost:631) from your local machine.
+
 To remote access CUPS from other clients you need to run the following commands:
 ```sh
 sudo cupsctl --remote-any

@@ -16,14 +16,20 @@ Last development version is installed by default! You can check the commit histo
 An updated FAQ can always be found at [localhost/faq](http://localhost/faq).  
 
 Please read the license notice [here](https://github.com/PhotoboothProject/photobooth/blob/dev/LICENSE_NOTICE).
+<hr>
+
+#### 4.0.0 (10.09.2022)
+
+Source code moved to [https://github.com/PhotoboothProject/photobooth](https://github.com/PhotoboothProject/photobooth),  
+old Releases etc. will still be available at [https://github.com/andi34/photobooth](https://github.com/andi34/photobooth)
+
 
 **Security**
   - Security advice added to the README and welcome page [#376](https://github.com/andi34/photobooth/pull/376)
-  - PHPMailer: update to v6.6.3
+  - PHPMailer: update to v6.6.4
 
 **Breaking changes**
-  - Source code moved to [https://github.com/PhotoboothProject/photobooth](https://github.com/PhotoboothProject/photobooth),  
-    old Releases etc. will still be available at [https://github.com/andi34/photobooth](https://github.com/andi34/photobooth)
+
   - QR code is now printed onto the image instead on the right side to not break the image ratio,  
     new options have been added for best user experience (see **New Options** for details)
   - Remove Greek, Polish and Spanish from Language options
@@ -40,14 +46,17 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   - fix print with QR Code
   - Video preview [#448](https://github.com/andi34/photobooth/pull/448), [#476](https://github.com/andi34/photobooth/pull/476):
     - Fix gphoto preview on retry / next collage image.
-    - fix taking pictures from gphoto preview (**Note:** Gphoto won't be used, it's more like taking a screenshot of the Preview. Since Gphoto won't be used there's no flash light of the camera!)
+    - fix taking pictures from gphoto preview [#24](https://github.com/PhotoboothProject/photobooth/pull/24) (**Note:** Gphoto won't be used, it's more like taking a screenshot of the Preview. Since Gphoto won't be used there's no flash light of the camera!)
     - hide video preview in background of interrupted collage
     - fixed possible DSLR preview stop time bug
     - fixed bug: preview['flip'] was saved but not reloaded. So if the correct setting should be retained it needed to be set every time.
     - fixed bug: in the background of the continuos collage image preview the gphoto2 preview (without bsm) continued to run visibly
-  - respect retry timeout:
-    The timeout should not be a new countdown, it should be a timeout as it's name says. Retry notification will now be visible for defined time. Countdown for picture/next collage image is not touched and will be used as defined.
-  - core: fix get request at countdown
+    - Improve preview handling [#6](https://github.com/PhotoboothProject/photobooth/pull/6)
+  - core:
+    - respect retry timeout:  
+      The timeout should not be a new countdown, it should be a timeout as it's name says. Retry notification will now be visible for defined time. Countdown for picture/next collage image is not touched and will be used as defined.
+    - fix get request at countdown
+    - handle errors on get requests[#15](https://github.com/PhotoboothProject/photobooth/pull/15)
   - welcome.php: use detected URL to start Photobooth
   - FAQ: fix command to execute setup-network.sh for hotspot
   - frame/font: again allow to be located outside of photobooth source
@@ -55,6 +64,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   - collage:
     - Continue collage with keypress [#408](https://github.com/andi34/photobooth/pull/408)
     - prevent caching of collage images with unique image name [#425](https://github.com/andi34/photobooth/pull/425)
+    - use collage countdown timer on first collage image [#22](https://github.com/PhotoboothProject/photobooth/pull/22)
   - installation script:
     - fix permissions on www-data users cachefolder and .yarnrc if exists
     - fix and improve use of lighttpd and nginx [#477](https://github.com/andi34/photobooth/pull/477)
@@ -84,6 +94,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   - Collage:
     - added simple 2+1 style that is to be used with a frame that fills the open space [#424](https://github.com/andi34/photobooth/pull/424)
     - Added an option to set a placeholder (eg custom image / graphic) for one image of the collage [#424](https://github.com/andi34/photobooth/pull/436)
+    - simple customizable collage config with a json file [#26](https://github.com/PhotoboothProject/photobooth/pull/26)
   - Preview:
     - config: allow to adjust the time to stop the gphoto preview
     - choose to flip the preview along the X or Y axis [#465](https://github.com/andi34/photobooth/pull/465), fixup [#476](https://github.com/andi34/photobooth/pull/476)
@@ -96,7 +107,6 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
       - _none_ - The image is not resized.
       - _scale-down_- the image is scaled down to the smallest version of none or contain.
     - allow to set _background-size_ to _cover_ on URL preview
-    - Improve preview handling [#6](https://github.com/PhotoboothProject/photobooth/pull/6)
   - Print:
     - Always print the QR onto the image instead in the right side (see **Breaking Changes**)
     - QR size adjustable
@@ -109,6 +119,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
     - Passes the Filename (doesn't include the full path!) to the _post-cmd_. This can be used e.g. to manipulate the Image (e.g. with Imagemagick) after the Picture was taken.
 
 **General**
+  - restore windows compatibility [#23](https://github.com/PhotoboothProject/photobooth/pull/23)
   - Import latest Crowdin translations
   - Cleanup core.js [#369](https://github.com/andi34/photobooth/pull/369):
     - remove unneeded if checks
@@ -146,7 +157,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
       - Fix (improve) nginx / lighttpd service startup
       - Fix client_max_body_size problems on nginx
     - detect installed webbrowser and create autostart file depending on it
-      - The following browser can be detected: _chromium-browser_ , _google-chrome_ , _google-chrome-stable_ , google-chrome-beta_ , _firefox_
+      - The following browser can be detected: _chromium-browser_ , _google-chrome_ , _google-chrome-stable_ , _google-chrome-beta_ , _firefox_
     - skip Desktop related config if _lxde_ is not installed
     - avoid Chrome/Chromium asking for password to unlock keyring
     - run apt upgrade instead apt dist-upgrade:  
@@ -173,7 +184,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
     - sass(button): convert button size from px to em
     - sass(modern button): adjust font awesome icon size
     - Dark UI Style by @Moarqi
-    - replace default background
+    - replace default background image
     - add clouds background images
   - Email:
     - hide checkbox to add email to database, adjust information text
@@ -181,6 +192,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
     - remove outdated update-booth.sh
   - Video preview:
     - minor change: don't display "please wait" text for interrupted collage when the selection is shown on screen [#476](https://github.com/andi34/photobooth/pull/476)
+    - Improve preview handling [#6](https://github.com/PhotoboothProject/photobooth/pull/6)
   - sass/css:
     - video preview:
       - simplify rules
@@ -190,6 +202,10 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
     - add missing node_modules dependencies
   - admin:
     - hide experimental updater, instead use the _install-photobooth.sh_ to update
+  - pass filename to post cmd [#7](https://github.com/PhotoboothProject/photobooth/pull/7)
+  - Overhaul Photobooth logging [#14](https://github.com/PhotoboothProject/photobooth/pull/14)
+  - more code-cleanup in various places
+
 
 <hr>
 

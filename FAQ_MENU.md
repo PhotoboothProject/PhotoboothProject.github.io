@@ -18,6 +18,7 @@
 * **Q:** [How to update or add translations?](FAQ#how-to-update-or-add-translations)
 * **Q:** [How can I test my current photo settings?](FAQ#how-can-i-test-my-current-photo-settings)
 * **Q:** [How can I test my current collage settings?](FAQ#how-can-i-test-my-current-collage-settings)
+* **Q:** [How can setup a custom collage design?](FAQ#how-can-setup-a-custom-collage-design)
 * **Q:** [How to change the look of my Photobooth?](FAQ#how-to-change-the-look-of-my-photobooth)
 * **Q:** [How to keep pictures on my Camera using gphoto2?](FAQ#how-to-keep-pictures-on-my-camera-using-gphoto2)
 * **Q:** [Cromakeying is saving without finishing saving](FAQ#cromakeying-is-saving-without-finishing-saving)

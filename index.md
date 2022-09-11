@@ -25,10 +25,8 @@ _Latest development version:_
 
 ---
 
-
-
----
 ## Contribute to this Webpage
+
 Clone the _PhotoboothProject.github.io_ project from github. Run the following commands from your Terminal:
 
 ```sh
@@ -41,22 +39,37 @@ Make your changes, upload them to your fork and create a [pull request](https://
 ---
 
 ## Changelog
+
 View all version changes [here](Changelog).
+
 ---
 
 ## News
+
 ### 10 September 2022
-Photobooth v4.0.0 released today in a new _**modern squared**_ look!
 
-A lot of bugs have been fixed, a lot of new options have been added and a lot of code was improved.
+We're proud to release Photobooth v4.0.0 with the code switch to PhotoboothProject which contains a lot of Bugfixes and user-wishes could be integrated.
 
-Please take at the [Changelog](Changelog) for all information. [Update instructions](Update-Photobooth) have been updated, you can now easily update your git installation using the photobooth installer!
+Photobooth v4.0.0 comes in a new _**modern squared**_ look!
 
-Enjoy!
+Overall the code got optimized and cleaned up. There's also a lot of new options added.
+
+Photobooth is now again compatible with Windows, also PHP8 won't cause trouble.
+
+The full Changelog can be found [here](Changelog).
+
+If you find a bug you're welcome to report it on the [GitHub issue page](https://github.com/PhotoboothProject/photobooth/issues).
+
+New Images with preinstalled Photobooth will be available next days.
+
+[Update instructions](Update-Photobooth) have been updated, you can now easily update your existing git installation of Photobooth using the photobooth installer!
+
+Enjoy Photobooth v4.0.0!
 
 ---
 
 ### 17 August 2022
+
 Photobooth source moved!
 
 We’re proud to announce that our Photobooth Source moved to [https://github.com/PhotoboothProject](https://github.com/PhotoboothProject) for the upcoming Photobooth release!

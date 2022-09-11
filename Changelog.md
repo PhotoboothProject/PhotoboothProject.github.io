@@ -34,7 +34,7 @@ old Releases etc. will still be available at [https://github.com/andi34/photoboo
     new options have been added for best user experience (see **New Options** for details)
   - Remove Greek, Polish and Spanish from Language options
     because they aren't maintained ([further information](https://github.com/andi34/photobooth/issues/64#issuecomment-1025126230))
-  - Collage: layout's changed slightly (positions and image size now get calculated depending on defined api). Existing frames might not fit anymore and need to be updated.
+  - Collage: layout's changed slightly (positions and image size now get calculated depending on defined dpi). Existing frames might not fit anymore and need to be updated.
   - vendor: remove rpihotspot from repo (it's still available on github, but we don't need it as a direct dependencie for Photobooth)
 
 **Bugfixes**
@@ -42,7 +42,7 @@ old Releases etc. will still be available at [https://github.com/andi34/photoboo
   - livechroma: fix text formatting on error/retry
   - api(takePic):
     - fix error message, take picture command can be anything
-    - check if picture exists: If an picture exists already, rename it before using the same filename for a new picture. This might fix an issue on collage where an retaken image isn't saved / used and should also prevent overriding an existing image by accident.
+    - check if picture exists: If a picture exists already, rename it before using the same filename for a new picture. This might fix an issue on collage where a retaken image isn't saved / used and should also prevent overriding an existing image by accident.
   - fix print with QR Code
   - Video preview [#448](https://github.com/andi34/photobooth/pull/448), [#476](https://github.com/andi34/photobooth/pull/476):
     - Fix gphoto preview on retry / next collage image.

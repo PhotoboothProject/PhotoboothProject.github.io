@@ -28,3 +28,7 @@ wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/install-
 sudo bash install-photobooth.sh --update
 ```
 
+**Special note:**
+
+If you have accessed Photobooth earlier from your Browser,  
+please clear your Browsers Cache once to avoid graphical glitches or being unable to save config changes using the Adminpanel.

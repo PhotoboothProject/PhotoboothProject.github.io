@@ -31,19 +31,14 @@ sudo bash install-photobooth.sh -username='pi'
 By default Apache is used for an easy and no-hassle setup as NGINX and Lighttpd need some additional steps.
 To use NGINX run
 ```sh
-sudo bash install-photobooth.sh -webserver='nginx'
+sudo bash install-photobooth.sh -username='<YourUsername>' -webserver='nginx'
 ```
 
 (additional Setup note: [Cromakeying is saving without finishing saving](FAQ#cromakeying-is-saving-without-finishing-saving) ).
 
 To use Lighttpd as Webserver run
 ```sh
-sudo bash install-photobooth.sh -webserver='lighttpd'
-```
-
-Flags can be combined:
-```sh
-sudo bash install-photobooth.sh -username='pi' -webserver='nginx'
+sudo bash install-photobooth.sh -username='<YourUsername>' -webserver='lighttpd'
 ```
 
 To get to know all options you can simply run `sudo bash install-photobooth.sh -help`.

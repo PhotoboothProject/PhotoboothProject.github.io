@@ -22,10 +22,10 @@ First, make sure there's no old installer available:
 rm -f install-photobooth.sh
 ```
 
-To update an existing Photobooth-Installation via git, run below commands in your terminal:  
+To update an existing Photobooth-Installation via git, run below commands in your terminal. A valid OS username must be passed to the installer:  
 ```
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/install-photobooth.sh
-sudo bash install-photobooth.sh --update
+sudo bash install-photobooth.sh --update --username='<YourUsername>'
 ```
 
 **Special note:**

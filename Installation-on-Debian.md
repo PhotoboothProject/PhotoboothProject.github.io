@@ -17,12 +17,11 @@ The installation script is intendet to work on Raspberry Pi OS based on Debian b
 
 **Note:** If you are using an older version of Rasperry Pi OS or Debian / Debian based distribution Node.js v12.22.x will be installed if needed!
 
+A valid username is needed to run the installer. Your OS username must be passed by the `-username` flag to the installer.
 ```sh
 wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/install-photobooth.sh
-sudo bash install-photobooth.sh
+sudo bash install-photobooth.sh -username='<YourUsername>'
 ```
-
-On a Raspberry Pi, a username is needed to install all Pi specific options. Your OS username can be passed by the `-username` flag to the installer.
 
 For the user "pi", the command to install Photobooth needs to be:
 ```sh

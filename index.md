@@ -46,6 +46,20 @@ View all version changes [here](Changelog).
 
 ## News
 
+### 30 September 2022
+
+We're proud to release Photobooth v4.1.0!
+
+Some bugs have been fixed, some new features have made it's way into the new version and some code have been cleaned.
+
+Logging is added to save and reset actions via Adminpanel for easier debugging.
+
+The full Changelog can be found [here](Changelog).
+
+Enjoy Photobooth v4.1.0!
+
+---
+
 ### 10 September 2022
 
 We're proud to release Photobooth v4.0.0 with the code switch to PhotoboothProject which contains a lot of Bugfixes and user-wishes could be integrated.

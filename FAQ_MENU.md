@@ -27,7 +27,6 @@
 * **Q:** [How to hide the mouse cursor, disable screen blanking and screen saver?](FAQ#how-to-hide-the-mouse-cursor-disable-screen-blanking-and-screen-saver)
 * **Q:** [How to use a live stream as background at countdown?](FAQ#how-to-use-a-live-stream-as-background-at-countdown)
 * **Q:** [Can I use a live stream as background?](FAQ#can-i-use-a-live-stream-as-background)
-* **Q:** [How to get better performance using gphoto2 as preview?](FAQ#how-to-get-better-performance-using-gphoto2-as-preview)
 * **Q:** [I've trouble setting up E-Mail config. How do I solve my problem?](FAQ#ive-trouble-setting-up-e-mail-config-how-do-i-solve-my-problem)
 * **Q:** [How to only open the gallery to avoid people taking pictures](FAQ#how-to-only-open-the-gallery-to-avoid-people-taking-pictures)
 * **Q:** [Chromakeying isn't working if I access the Photobooth page on my Raspberry Pi, but it works if I access Photobooth from an external device (e.g. mobile phone or tablet). How can I solve the problem?](FAQ#chromakeying-isnt-working-if-i-access-the-photobooth-page-on-my-raspberry-pi-but-it-works-if-i-access-photobooth-from-an-external-device-eg-mobile-phone-or-tablet-how-can-i-solve-the-problem)

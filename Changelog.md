@@ -30,7 +30,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 
 **New Options**
 
-* feature(collage): add background to collage for easier template creation. closes [Issue #28](https://github.com/PhotoboothProject/photobooth/issues/28] by @up-87 in [#31](https://github.com/PhotoboothProject/photobooth/pull/31)
+* feature(collage): add background to collage for easier template creation. closes [Issue #28](https://github.com/PhotoboothProject/photobooth/issues/28) by @up-87 in [#31](https://github.com/PhotoboothProject/photobooth/pull/31)
 * feature(debugpanel): add access to installation log by @andi34 in [#37](https://github.com/PhotoboothProject/photobooth/pull/37)
 * feature(ui): allow to define language resource path, also fix path for javascript folders on subfolder installation by @andi34 in [#38](https://github.com/PhotoboothProject/photobooth/pull/38)
 * feature(preview): allow to rotate all preview options by @andi34 in [#44](https://github.com/PhotoboothProject/photobooth/pull/44)

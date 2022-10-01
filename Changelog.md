@@ -22,31 +22,30 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 
 **Bugfixes**
 
-* fix(UI): don't run shutter animation twice by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/32
-* fix(ui): add version tag to own stylesheets by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/33
-* fix(ui): add version tag to own javascripts by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/36
-* fix(admin): don't remove images from archives and private folder by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/42
-* fix(admin): respect changed config before executing an reset by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/43
+* fix(UI): don't run shutter animation twice by @andi34 in [#32](https://github.com/PhotoboothProject/photobooth/pull/32)
+* fix(ui): add version tag to own stylesheets by @andi34 in [#33](https://github.com/PhotoboothProject/photobooth/pull/33)
+* fix(ui): add version tag to own javascripts by @andi34 in [#36](https://github.com/PhotoboothProject/photobooth/pull/36)
+* fix(admin): don't remove images from archives and private folder by @andi34 in [#42](https://github.com/PhotoboothProject/photobooth/pull/42)
+* fix(admin): respect changed config before executing an reset by @andi34 in [#43](https://github.com/PhotoboothProject/photobooth/pull/43)
 
 **New Options**
 
-* feature(collage): add background to collage for easier template creation. closes #28 by @up-87 in https://github.com/PhotoboothProject/photobooth/pull/31
-* feature(debugpanel): add access to installation log by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/37
-* feature(ui): allow to define language resource path, also fix path for javascript folders on subfolder installation by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/38
-* feature(preview): allow to rotate all preview options by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/44
-* rework(preview): remove gphoto preview option by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/46
+* feature(collage): add background to collage for easier template creation. closes [Issue #28](https://github.com/PhotoboothProject/photobooth/issues/28] by @up-87 in [#31](https://github.com/PhotoboothProject/photobooth/pull/31)
+* feature(debugpanel): add access to installation log by @andi34 in [#37](https://github.com/PhotoboothProject/photobooth/pull/37)
+* feature(ui): allow to define language resource path, also fix path for javascript folders on subfolder installation by @andi34 in [#38](https://github.com/PhotoboothProject/photobooth/pull/38)
+* feature(preview): allow to rotate all preview options by @andi34 in [#44](https://github.com/PhotoboothProject/photobooth/pull/44)
+* rework(preview): remove gphoto preview option by @andi34 in [#46](https://github.com/PhotoboothProject/photobooth/pull/46)
 
 **General**
 
-* lib(configsetup): make more settings available on basic view by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/35
-* api(debug): log information from admin.php on config changes and reset by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/41
-* crowdin: translation import by @andi34 in https://github.com/PhotoboothProject/photobooth/pull/39
-
+* lib(configsetup): make more settings available on basic view by @andi34 in [#35](https://github.com/PhotoboothProject/photobooth/pull/35)
+* api(debug): log information from admin.php on config changes and reset by @andi34 in [#41](https://github.com/PhotoboothProject/photobooth/pull/41)
+* crowdin: translation import by @andi34 in [#39](https://github.com/PhotoboothProject/photobooth/pull/39)
 
 
 **Full Changelog:**
 
-https://github.com/PhotoboothProject/photobooth/compare/v4.0.0...v4.1.0
+[https://github.com/PhotoboothProject/photobooth/compare/v4.0.0...v4.1.0](https://github.com/PhotoboothProject/photobooth/compare/v4.0.0...v4.1.0)
 
 
 <hr>

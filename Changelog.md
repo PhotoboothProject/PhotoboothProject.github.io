@@ -18,6 +18,34 @@ An updated FAQ can always be found at [localhost/faq](http://localhost/faq).
 Please read the license notice [here](https://github.com/PhotoboothProject/photobooth/blob/dev/LICENSE_NOTICE).
 <hr>
 
+
+#### 4.2.0 (16.10.2022)
+
+**Bugfixes**
+
+* fix(admin): show 3rd line text of text on * in advanced view by @andi34 in [#52](https://github.com/PhotoboothProject/photobooth/pull/52)
+* (fix) Stop shutter on fail, respect retry settings on fail by @andi34 in [#54](https://github.com/PhotoboothProject/photobooth/pull/54)
+* api(takePic): fix flipping image taken from device cam preview, fix [Issue 55](https://github.com/PhotoboothProject/photobooth/issues/55) by @andi34 in [#57](https://github.com/PhotoboothProject/photobooth/pull/57)
+* core(api.initializeMedia): retry every second by @andi34 in [#56](https://github.com/PhotoboothProject/photobooth/pull/56)
+
+**General**
+
+* build(deps): bump sass from 1.54.8 to 1.55.0 by @dependabot in [#47](https://github.com/PhotoboothProject/photobooth/pull/47)
+* build(deps-dev): bump eslint from 8.23.0 to 8.24.0 by @dependabot in [#48](https://github.com/PhotoboothProject/photobooth/pull/48)
+* build(deps-dev): bump @babel/preset-env from 7.18.10 to 7.19.3 by @dependabot in [#49](https://github.com/PhotoboothProject/photobooth/pull/49)
+* build(deps-dev): bump @prettier/plugin-php from 0.18.9 to 0.19.1 by @dependabot in [#50](https://github.com/PhotoboothProject/photobooth/pull/50)
+* build(deps-dev): bump @babel/core from 7.18.13 to 7.19.3 by @dependabot in [#51](https://github.com/PhotoboothProject/photobooth/pull/51)
+* crowdin: translation import by @andi34 in [#58](https://github.com/PhotoboothProject/photobooth/pull/58)
+* vendor(PHPMailer): update to v6.6.5 by @andi34 in [#59](https://github.com/PhotoboothProject/photobooth/pull/59)
+
+
+**Full Changelog:**
+
+[https://github.com/PhotoboothProject/photobooth/compare/v4.1.0...v4.2.0](https://github.com/PhotoboothProject/photobooth/compare/v4.1.0...v4.2.0)
+
+
+<hr>
+
 #### 4.1.0 (30.09.2022)
 
 **Bugfixes**

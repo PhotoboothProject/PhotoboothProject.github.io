@@ -46,6 +46,20 @@ View all version changes [here](Changelog).
 
 ## News
 
+### 16 October 2022
+
+Photobooth v4.2.0 released today!
+
+Some minor bugs have been fixed, PHPMailer and build dependencies have been updated.
+
+
+The full Changelog can be found [here](Changelog).
+
+Enjoy Photobooth v4.2.0!
+
+---
+
+
 ### 30 September 2022
 
 We're proud to release Photobooth v4.1.0!

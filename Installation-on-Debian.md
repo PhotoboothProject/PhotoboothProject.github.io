@@ -72,69 +72,7 @@ sudo apt install -y libapache2-mod-php
 ```sh
 sudo apt install -y nginx php-fpm
 ```
-<details><summary><b>Additional needed steps to enable PHP in NGINX</b></summary>
-
-Once NGINX is installed we need to enable PHP in NGINX. If you haven't made any changes to your NGINX config you can run the following commands:
-```sh
-sudo cp /etc/nginx/sites-enabled/default ~/nginx-default.bak
-sudo sed -i 's/^\(\s*\)index index\.html\(.*\)/\1index index\.php index\.html\2/g' /etc/nginx/sites-available/default
-sudo sed -i '/location ~ \\.php$ {/s/^\(\s*\)#/\1/g' /etc/nginx/sites-available/default
-sudo sed -i '/include snippets\/fastcgi-php.conf/s/^\(\s*\)#/\1/g' /etc/nginx/sites-available/default
-sudo sed -i '/fastcgi_pass unix:\/run\/php\//s/^\(\s*\)#/\1/g' /etc/nginx/sites-available/default
-sudo sed -i '/.*fastcgi_pass unix:\/run\/php\//,// { /}/s/^\(\s*\)#/\1/g; }' /etc/nginx/sites-available/default
-```
-
-If you've made changes by hand already to `/etc/nginx/sites-enabled/default` you have to do all changes by hand:
-```sh
-sudo nano /etc/nginx/sites-enabled/default
-```
-
-Find the line `index index.html index.htm;` and add `index.php` after `index` (the line now should look like this: `index index.php index.html index.htm;`).
-
-Now scroll down until you find a section with the following content:
-```
-# pass the PHP scripts to FastCGI server
-#
-# location ~ \.php$ {
-```
-
-Edit by removing the `#` characters on the following lines:
-```
-location ~ \.php$ {
-    include snippets/fastcgi-php.conf;
-    fastcgi_pass unix:/run/php/php7.3-fpm.sock;
-}
-```
-
-It should look like this:
-```
-        location ~ \.php$ {
-                include snippets/fastcgi-php.conf;
-        #
-        #       # With php-fpm (or other unix sockets):
-                fastcgi_pass unix:/run/php/php7.3-fpm.sock;
-        #       # With php-cgi (or other tcp sockets):
-        #       fastcgi_pass 127.0.0.1:9000;
-        }
-```
-
-
-Test the config once `/etc/nginx/sites-enabled/default` was changed:
-```sh
-sudo /usr/sbin/nginx -t -c /etc/nginx/nginx.conf &>/dev/null && echo 'config test ok' || echo 'config test failed'
-```
-
-If you get the response
-```
-'config test ok'
-```
-
-then it is time to restart the server with:
-```sh
-sudo systemctl reload nginx
-```
-
-</details>
+[Additional needed steps to enable PHP in NGINX](Installation-on-Debian-nginx)
 
 
 #### or Install Lighttpd & PHP
@@ -143,63 +81,7 @@ sudo systemctl reload nginx
 sudo apt install -y lighttpd php-fpm
 ```
 
-<details><summary><b>Additional needed steps to enable PHP in Lighttpd</b></summary>
-
-```sh
-sudo lighttpd-enable-mod fastcgi
-sudo lighttpd-enable-mod fastcgi-php
-```
-
-Edit fastcgi-php config, keep a backup of the original file in case something went wrong:
-```sh
-sudo cp /etc/lighttpd/conf-available/15-fastcgi-php.conf /etc/lighttpd/conf-available/15-fastcgi-php.conf.bak
-sudo nano /etc/lighttpd/conf-available/15-fastcgi-php.conf
-```
-
-Change the `15-fastcgi-php.conf` from
-```
-# -*- depends: fastcgi -*-
-# /usr/share/doc/lighttpd/fastcgi.txt.gz
-# http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:ConfigurationOptions#mod_fastcgi-fastcgi
-
-## Start an FastCGI server for php (needs the php5-cgi package)
-fastcgi.server += ( ".php" => 
-	((
-		"bin-path" => "/usr/bin/php-cgi",
-		"socket" => "/var/run/lighttpd/php.socket",
-		"max-procs" => 1,
-		"bin-environment" => ( 
-			"PHP_FCGI_CHILDREN" => "4",
-			"PHP_FCGI_MAX_REQUESTS" => "10000"
-		),
-		"bin-copy-environment" => (
-			"PATH", "SHELL", "USER"
-		),
-		"broken-scriptfilename" => "enable"
-	))
-)
-```
-
-to look like this:
-```
-# -*- depends: fastcgi -*-
-# /usr/share/doc/lighttpd/fastcgi.txt.gz
-# http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:ConfigurationOptions#mod_fastcgi-fastcgi
-
-## Start an FastCGI server for php (needs the php5-cgi package)
-fastcgi.server += ( ".php" => 
-	((
-		"socket" => "/var/run/php/php7.3-fpm.sock",
-		"broken-scriptfilename" => "enable"
-	))
-)
-```
-
-Now reload the service:
-```sh
-sudo service lighttpd force-reload
-```
-</details>
+[Additional needed steps to enable PHP in Lighttpd](Installation-on-Debian-lighttpd)
 
 
 ### Install dependencies

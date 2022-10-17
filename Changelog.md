@@ -27,6 +27,9 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 * (fix) Stop shutter on fail, respect retry settings on fail by @andi34 in [#54](https://github.com/PhotoboothProject/photobooth/pull/54)
 * api(takePic): fix flipping image taken from device cam preview, fix [Issue 55](https://github.com/PhotoboothProject/photobooth/issues/55) by @andi34 in [#57](https://github.com/PhotoboothProject/photobooth/pull/57)
 * core(api.initializeMedia): retry every second by @andi34 in [#56](https://github.com/PhotoboothProject/photobooth/pull/56)
+* tools(api.getRequest): don't use JSON.parse while getting a response
+* install-photobooth: iputils-ping is needed to check Internet connection
+* install-photobooth: fix placing Install log inside Photobooth folder
 
 **General**
 
@@ -37,6 +40,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 * build(deps-dev): bump @babel/core from 7.18.13 to 7.19.3 by @dependabot in [#51](https://github.com/PhotoboothProject/photobooth/pull/51)
 * crowdin: translation import by @andi34 in [#58](https://github.com/PhotoboothProject/photobooth/pull/58)
 * vendor(PHPMailer): update to v6.6.5 by @andi34 in [#59](https://github.com/PhotoboothProject/photobooth/pull/59)
+* core(preview): remove unneeded checks on preview handling
 
 
 **Full Changelog:**

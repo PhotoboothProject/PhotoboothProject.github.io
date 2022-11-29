@@ -46,6 +46,19 @@ View all version changes [here](Changelog).
 
 ## News
 
+### 28 November 2022
+
+Photobooth v4.3.0 released!
+
+Some minor bugs have been fixed, build dependencies have been updated, new Features have been added.
+
+
+Like always: The full Changelog can be found [here](Changelog).
+
+Enjoy Photobooth v4.3.0!
+
+---
+
 ### 16 October 2022
 
 Photobooth v4.2.0 released today!

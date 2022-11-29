@@ -19,6 +19,43 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 <hr>
 
 
+#### 4.3.0 (29.11.2022)
+
+**Bugfixes**
+
+* FAQ: fix small typo by @modularTaco in  [#68](https://github.com/PhotoboothProject/photobooth/pull/68)
+* fix(documentation): remove reference to dev mode by @modularTaco in  [#71](https://github.com/PhotoboothProject/photobooth/pull/71)
+* fix(gallery): respect clickToCloseNonZoomable PhotoSwipe config by @andi34 in  [#72](https://github.com/PhotoboothProject/photobooth/pull/72)
+* fix(gallery): fix click on close button while an image is opened by @andi34 in  [#73](https://github.com/PhotoboothProject/photobooth/pull/73)
+* install-photobooth: also check for "chromium" package by @andi34 in  [#86](https://github.com/PhotoboothProject/photobooth/pull/86)
+
+**New Options**
+
+* New options for the QR Code on print by @fmiccolis in  [#65](https://github.com/PhotoboothProject/photobooth/pull/65)
+* Feature: make icons adjustable by @andi34 in  [#74](https://github.com/PhotoboothProject/photobooth/pull/74)
+* Show frame over the preview by @fmiccolis in  [#45](https://github.com/PhotoboothProject/photobooth/pull/45)
+* feature: add simple trigger ( [http://localhost/trigger.php](http://localhost/trigger.php) ) for remotebuzzer server by @andi34 in  [#66](https://github.com/PhotoboothProject/photobooth/pull/66)
+
+**General**
+
+* allow collage background images to be in any filetype gd understands by @up-87 in [#63](https://github.com/PhotoboothProject/photobooth/pull/63)
+* core(navbar): restructure navbar function by @andi34 in [#64](https://github.com/PhotoboothProject/photobooth/pull/64)
+* Restructure preview handling, add testpage for preview settings  ( [http://localhost/trigger.php](http://localhost/test/preview.php) ) by @andi34 in  [#61](https://github.com/PhotoboothProject/photobooth/pull/61)
+* make collage handling more configurable, fix collages and the retry mechanism by @up-87 in  [#69](https://github.com/PhotoboothProject/photobooth/pull/69)
+* cleanup: remove experimental updater & dependencies checker by @andi34 in  [#84](https://github.com/PhotoboothProject/photobooth/pull/84)
+* cleanup: api, also improve random image naming by @andi34 in  [#87](https://github.com/PhotoboothProject/photobooth/pull/87)
+* crowdin: translation import by @andi34 in  [#88](https://github.com/PhotoboothProject/photobooth/pull/88)
+
+## New Contributors
+* @fmiccolis made their first contribution in  [#65](https://github.com/PhotoboothProject/photobooth/pull/65)
+* @modularTaco made their first contribution in  [#68](https://github.com/PhotoboothProject/photobooth/pull/68)
+
+**Full Changelog**:
+
+[https://github.com/PhotoboothProject/photobooth/compare/v4.2.0...v4.3.0](https://github.com/PhotoboothProject/photobooth/compare/v4.2.0...v4.3.0)
+
+<hr>
+
 #### 4.2.0 (16.10.2022)
 
 **Bugfixes**

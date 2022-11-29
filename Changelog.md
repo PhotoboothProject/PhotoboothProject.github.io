@@ -46,7 +46,8 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 * cleanup: api, also improve random image naming by @andi34 in  [#87](https://github.com/PhotoboothProject/photobooth/pull/87)
 * crowdin: translation import by @andi34 in  [#88](https://github.com/PhotoboothProject/photobooth/pull/88)
 
-## New Contributors
+**New Contributors**
+
 * @fmiccolis made their first contribution in  [#65](https://github.com/PhotoboothProject/photobooth/pull/65)
 * @modularTaco made their first contribution in  [#68](https://github.com/PhotoboothProject/photobooth/pull/68)
 

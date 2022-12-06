@@ -46,6 +46,22 @@ View all version changes [here](Changelog).
 
 ## News
 
+### 6 December 2022
+
+Photobooth v4.3.1 released!
+
+Build dependencies have been updated and the process of taking an image was improved to optimize the timings between the single actions.  
+The visible countdown now is independent of the time we need to take an image, the defined offset will be respected now.  
+Also we now don't wait for the cheese message to end, the picture will be taken without waiting for it.  
+A small bug was fixed, where the shutter animation was started twice if an cheese image is used.
+
+Like always: The full Changelog can be found [here](Changelog).
+
+
+Enjoy Photobooth v4.3.1!
+
+---
+
 ### 28 November 2022
 
 Photobooth v4.3.0 released!

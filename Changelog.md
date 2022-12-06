@@ -19,6 +19,31 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 <hr>
 
 
+#### 4.3.1 (06.12.2022)
+
+**Bugfixes**
+
+* core: improve timings while taking an image by @andi34 in [#95](https://github.com/PhotoboothProject/photobooth/pull/95)
+  * Adjust the code to start taking an image before the Cheeeeeese message disappears 
+  (the Cheese-Message can be used to "hide" the delay we have until the camera triggers).
+  * Also adjust the code to respect the defined offset while taking an image. The take picture action now runs independent of the visible running countdown.
+  * Stop the shutter animation after 500ms which should look more fluid and also make sure we can't forget to stop it. If cheese is enabled cheese time will be used instead.
+  * Don't run shutter animation twice if an cheese image is used and cheese enabled.
+
+**General**
+
+* build(deps): bump sass from 1.55.0 to 1.56.1 by @dependabot in [#93](https://github.com/PhotoboothProject/photobooth/pull/93)
+* build(deps-dev): bump @babel/preset-env from 7.19.4 to 7.20.2 by @dependabot in [#94](https://github.com/PhotoboothProject/photobooth/pull/94)
+* build(deps-dev): bump eslint from 8.26.0 to 8.28.0 by @dependabot in [#92](https://github.com/PhotoboothProject/photobooth/pull/92)
+* build(deps): bump socket.io from 4.5.3 to 4.5.4 by @dependabot in [#90](https://github.com/PhotoboothProject/photobooth/pull/90)
+* build(deps-dev): bump @prettier/plugin-php from 0.19.1 to 0.19.2 by @dependabot in [#91](https://github.com/PhotoboothProject/photobooth/pull/91)
+
+**Full Changelog**
+
+ [https://github.com/PhotoboothProject/photobooth/compare/v4.3.0...v4.3.1](https://github.com/PhotoboothProject/photobooth/compare/v4.3.0...v4.3.1)
+
+<hr>
+
 #### 4.3.0 (29.11.2022)
 
 **Bugfixes**

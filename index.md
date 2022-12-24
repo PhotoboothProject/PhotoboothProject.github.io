@@ -46,6 +46,21 @@ View all version changes [here](Changelog).
 
 ## News
 
+### 24 December 2022
+
+Hey everyone!
+
+Photobooth again was improved a lot this year and a lot of user wishes have been added to the project.
+
+Thanks to everyone for being part of this community, your feedback and your help to make Photobooth such a great OpenSource Project!
+
+We hope you have a safe and relaxing christmas time!
+
+
+Your Photobooth-Team
+
+---
+
 ### 6 December 2022
 
 Photobooth v4.3.1 released!

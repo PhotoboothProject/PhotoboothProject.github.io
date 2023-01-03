@@ -35,6 +35,8 @@
 * **Q:** [Automatic picture syncing to USB stick](FAQ#automatic-picture-syncing-to-usb-stick)
 * **Q:** [Raspberry Touchpanel DSI simultaneously with HDMI](FAQ#raspberry-touchpanel-dsi-simultaneously-with-hdmi)
 * **Q:** [How to administer CUPS remotely using the web interface?](FAQ#how-to-administer-cups-remotely-using-the-web-interface)
+* **Q:** [I get the error message "Something went wrong." while taking a picure, what can i do?](FAQ#i-get-the-error-message-something-went-wrong-while-taking-a-picure-what-can-i-do)
+
 
 ---
 

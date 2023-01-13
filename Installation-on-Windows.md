@@ -14,7 +14,7 @@
 - Download PHP 7.3.x or PHP 7.4.x (VC15 x64 Thread Safe): [https://windows.php.net/download](https://windows.php.net/download)
 - Download Digicamcontrol: [http://digicamcontrol.com/download](http://digicamcontrol.com/download)
 - Download Notepad++: [https://notepad-plus-plus.org/downloads](https://notepad-plus-plus.org/downloads)
-- Download latest Photobooth release: [https://github.com/PhotoboothProject/photobooth/releases](https://github.com/PhotoboothProject/photobooth/releases)
+- Download latest Photobooth release (_photobooth-4.x.x.zip_ or _photobooth-4.x.x.tar.gz_ - **Note:** the _Source code_ files won't work!): [https://github.com/PhotoboothProject/photobooth/releases](https://github.com/PhotoboothProject/photobooth/releases)
 
 ### Install & extract needed Software
 - Install Notepad++

@@ -7,7 +7,7 @@
 
 ---
 
-### Updating Photobooth on Raspbian
+### Updating Photobooth on Linux
 
 #### Updating from v2.x or older
 To update from an old version to latest Photobooth it's recommend to [make a clean installalation](INSTALL).

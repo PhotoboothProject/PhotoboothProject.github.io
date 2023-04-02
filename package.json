@@ -1,0 +1,56 @@
+{
+  "name": "photobooth-webpage",
+  "version": "4.0.0",
+  "description": "Photobooth is a Photobooth webinterface for Linux and Windows",
+  "scripts": {
+    "build": "npm-run-all --serial format build:gulp",
+    "build:gulp": "gulp",
+    "build:sass": "gulp sass",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:js": "rm resources/js/*.js || echo 'resources/js/*.js can not be removed or no .js files exist!'",
+    "clean:node": "rm -rf node_modules/ || echo 'node_modules/ can not be removed or does not exist!'",
+    "eslint": "eslint src/js/*.js",
+    "eslint:fix": "eslint src/js/*.js --fix",
+    "format": "npm-run-all --parallel format:*",
+    "format:js": "prettier src/js/*.js --write",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
+  },
+  "author": "Andreas Blaesius <andi@unlegacy-android.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhotoboothProject/photobooth.git"
+  },
+  "homepage": "https://photoboothproject.github.io",
+  "bugs": {
+    "url": "https://github.com/PhotoboothProject/photobooth/issues"
+  },
+  "keywords": [
+    "photobooth",
+    "gphoto2",
+    "camera",
+    "digicamcontrol",
+    "photography",
+    "raspberry pi",
+    "wedding",
+    "events"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "jquery": "^3.6.3",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.58.0",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "eslint": "^8.35.0",
+    "eslint-plugin-node": "^11.1.0",
+    "gulp-babel": "^8.0.0",
+    "prettier": "^2.8.4"
+  }
+}

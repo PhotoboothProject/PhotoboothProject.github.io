@@ -684,12 +684,12 @@ input[type=email] {
 }
 .gallery__body a {
   display: block;
-  width: 33.33333%;
+  width: 19%;
   padding: 0.5em;
   max-width: 500px;
   text-decoration: none;
   @media only screen and (max-width: 600px) {
-    width: 19%;
+    width: 33.33333%;
   }
 }
 .gallery__body img {

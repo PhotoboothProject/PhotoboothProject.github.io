@@ -602,16 +602,17 @@ input[type=email] {
 }
 
 .pswp__custom-caption {
-  color: $galleryButtonColor;
+  color: var(--gallery-button-color);
   background: rgba(0, 0, 0, 0.5);
   font-size: 16px;
-  width: 20ch;
+  width: calc(100% - 32px);
   max-width: 400px;
   padding: 2px 8px;
   border-radius: 4px;
   position: absolute;
-  left: 30px;
+  left: 50%;
   bottom: 16px;
+  transform: translateX(-50%);
 }
 .pswp__custom-caption a {
   color: var(--gallery-button-color);

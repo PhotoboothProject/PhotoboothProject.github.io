@@ -56,6 +56,25 @@ function initPhotoSwipeFromDOM(gallerySelector) {
     gallery.on('uiRegister', function () {
         // counter - 5, zoom button - 10, info - 15, close - 20.
         gallery.pswp.ui.registerElement({
+            name: 'custom-caption',
+            order: 6,
+            isButton: false,
+            appendTo: 'root',
+            html: 'Caption text',
+            // eslint-disable-next-line no-unused-vars
+            onInit: (el, pswp) => {
+                gallery.pswp.on('change', () => {
+                    const currSlideElement = gallery.pswp.currSlide.data.element;
+                    let captionHTML = '';
+                    if (currSlideElement) {
+                        captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+                    }
+                    el.innerHTML = captionHTML || '';
+                });
+            }
+        });
+
+        gallery.pswp.ui.registerElement({
             name: 'playpause',
             ariaLabel: 'Slideshow',
             order: 19,

@@ -688,7 +688,7 @@ input[type=email] {
   padding: 0.5em;
   max-width: 500px;
   text-decoration: none;
-  @media (orientation: landscape) {
+  @media only screen and (max-width: 600px) {
     width: 19%;
   }
 }

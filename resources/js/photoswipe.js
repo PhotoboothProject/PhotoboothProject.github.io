@@ -4,7 +4,7 @@
 
 // eslint-disable-next-line no-unused-vars
 var ssRunning = false,
-  ssOnce = false;
+  ssTimeOut;
 var ssDelay = 5000,
   ssButtonClass = '.pswp__button--playpause';
 
@@ -37,9 +37,8 @@ function initPhotoSwipeFromDOM(gallerySelector) {
   // Slideshow not running from the start
   setSlideshowState(ssButtonClass, false);
   gallery.on('change', function () {
-    if (ssRunning && ssOnce) {
-      ssOnce = false;
-      setTimeout(gotoNextSlide, ssDelay);
+    if (ssRunning) {
+      gotoNextSlide();
     }
   });
   gallery.on('close', function () {
@@ -93,20 +92,18 @@ function initPhotoSwipeFromDOM(gallerySelector) {
 
   /* slideshow management */
   function gotoNextSlide() {
-    var pswp = gallery.pswp;
+    clearTimeout(ssTimeOut);
     if (ssRunning && Boolean(gallery)) {
-      ssOnce = true;
-      // eslint-disable-next-line no-unused-vars
-      pswp.next();
+      ssTimeOut = setTimeout(function () {
+        gallery.pswp.next();
+      }, ssDelay);
     }
   }
   function setSlideshowState(el, running) {
-    if (running) {
-      setTimeout(gotoNextSlide, ssDelay / 2.0);
-    }
     var title = running ? 'Pause Slideshow' : 'Play Slideshow';
     $(el).prop('title', title);
     ssRunning = running;
+    gotoNextSlide();
   }
 }
 

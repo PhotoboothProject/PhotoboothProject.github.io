@@ -4,6 +4,7 @@
 <a href="https://photoboothproject.github.io/Changelog" class="button hidden">Changelog</a>
 <a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
 <a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
+<a href="https://photoboothproject.github.io/DONATION" class="button hidden">Donate</a>
 <a href="https://photoboothproject.github.io/projects.html" class="button hidden">User Projects</a>
 
 [![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-blue.svg)](https://t.me/PhotoboothGroup)   [![Translate on Crowdin](https://img.shields.io/badge/Traslate%20on-Crowdin-green.svg)](https://crowdin.com/project/photobooth)

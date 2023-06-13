@@ -46,11 +46,7 @@ Once done you need to adjust the configuration. Open the admin panel in your bro
 `raspistill -n -o %s -q 100 -t 1 | echo Done`
 
 
-**"Success message for take picture":**
-
-`Done`
-
-Pi Camera works with these config changes (also works together with preview at countdown if enabled).
+Pi Camera works with these config change (also works together with preview at countdown if enabled).
 
 Raspistill / libcamera-still does not give any feedback after the picture was taken, workaround for that with "echo".
 
@@ -155,12 +151,10 @@ To use a private custom index you need to create the following files:
 
 - `resources/css/custom_style.css`
   - Optional: `src/sass/custom_style.scss` (`yarn build` will create the `resources/css/custom_style.css` out of it)
-- `resources/css/custom_admin.css`
-  - Optional: `src/sass/custom_admin.scss` (`yarn build` will create the `resources/css/custom_admin.css` out of it)
 - `resources/css/custom_chromakeying.css`
   - Optional: `src/sass/custom_chromakeying.scss` (`yarn build` will create the `resources/css/custom_chromakeying.css` out of it)
-- `resources/css/custom_live_chromakeying.css`
-  - Optional: `src/sass/custom_live_chromakeying.scss` (`yarn build` will create the `resources/css/custom_live_chromakeying.css` out of it)
+- `resources/css/custom_chromacapture.css`
+  - Optional: `src/sass/custom_chromacapture.scss` (`yarn build` will create the `resources/css/custom_chromacapture.css` out of it)
 - `template/custom.template.php`
 
 At least one of these custom style files need to exist! If other custom style files are missing a copy of the modern style file will be used.
@@ -239,7 +233,7 @@ For example use <a href="https://keycode.info" target="_blank">https://keycode.i
 
   - Key code which triggers printing: **define**
 
-#### Remotebuzzer Hardware Button feature using GPIO connected hardware (Raspberry Pi only)
+#### Remotebuzzer Hardware Button & LED feature using GPIO connected hardware (Raspberry Pi only)
 
 **Important:** Works if you access Photobooth via [http://localhost](http://localhost) or [http://your-ip-adress](#), but accessing via the loopback IP (127.0.0.1) does not work!
 
@@ -255,7 +249,9 @@ The Hardware Button functionality supports two separate modes of operation (sele
 
 Both buttons and rotary encoder controls can be combined.
 
-Photobooth will watch GPIOs for a PIN_DOWN event - so the hardware button needs to pull the GPIO to ground, for to trigger. This requires the GPIOs to be configured in PULLUP mode - always. 
+Photobooth will watch Button GPIOs for a PIN_DOWN event - so the hardware button needs to pull the GPIO to ground, for to trigger. This requires the GPIOs to be configured in PULLUP mode - always. 
+
+For the **LED Support** GPIOs need to be set as OUTPUT.
 
 ##### Troubleshooting / Debugging
 
@@ -265,14 +261,18 @@ Having trouble?
 - Set Photobooth loglevel to 1 (or above). (admin screen -> general section)
 - Reload the Photobooth homepage
 - Check the browser developer console for error logs
-- Check the server logs for errors at the Debug panel: [http://localhost/admin/debugpanel.php](http://localhost/admin/debugpanel.php)
+- Check the server logs for errors at the Debug panel: [http://localhost/admin/debugpanel](http://localhost/admin/debugpanel)
 - If there is no errors logged but hardware buttons still do not trigger:
   - GPIO interrupts might be disabled. Check file `/boot/config.txt` and remove / disable the following overlay `dtoverlay=gpio-no-irq` to enable interrupts for GPIOs.
-  - GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting.
+  - Button GPIOs may not be configured as PULLUP. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting.
     ```
-    gpio=16,17,20,21,22,26,27=pu
+    gpio=9,16,17,20,21,22,23,24,26,27=pu
     ```
-- For the Shutdown button to work, `www-data` needs to have the necessary sudo permissions. This is done by the `install-photobooth.sh` script or can be manually added as
+  - LED GPIOs may not be configured as OUTPUT. The configuration for this is done in fie `/boot/config.txt` by adding the GPIO numbers in use as follows - you **must reboot** the Raspberry Pi in order to activate changes in this setting.
+    ```
+    gpio=5,6,7,8,12,18,19,25=op
+    ```
+- For the shutdown and reboot buttons to work, `www-data` needs to have the necessary sudo permissions. This is done by the `install-photobooth.sh` script or can be manually added as
     ```sh
     cat >> /etc/sudoers.d/020_www-data-shutdown << EOF
     www-data ALL=(ALL) NOPASSWD: /sbin/shutdown
@@ -322,6 +322,27 @@ The server supports up to four connected hardware buttons for the following func
 - Defaults to GPIO26
 - This button will initiate a print of the current picture either from the results screen or the gallery.
 
+5) **Reboot Button**
+
+- Defaults to GPIO23
+- This button will initate a safe system shutdown and halt (`shutdown -r now`).
+
+6) **Video Button**
+
+- Defaults to GPIO9
+- This button will initiate the recording of a short video.
+
+7) **Custom Button**
+
+- Defaults to GPIO24
+- Button press will trigger a single picture in Photobooth
+
+8) **Move2USB Button**
+
+- Defaults to GPIO10
+- This button will initiate the copy/move of all pictures an videos (jpg, gif und mp4) to a USB-thumb.
+- In the admin panel you can choose between disabled, copy and move.
+
 
 After any button is triggered, all hardware button remain disabled until the action (picture / collage) completed. Once completed, the hardware buttons re-arms / are active again.
 
@@ -332,8 +353,12 @@ Button            Raspberry
 
 Picture     ---   GPIO 21
 Collage     ---   GPIO 20
+Custom      ---   GPIO  5
+Video       ---   GPIO  7
 Shutdown    ---   GPIO 16
 Print       ---   GPIO 26
+Reboot      ---   GPIO  8
+Move2USB    ---   GPIO  6
 All         ---   GND
 ```
 
@@ -354,6 +379,26 @@ BTN  ---   GPIO 22
 GND  ---   GND
 ```
 
+##### LED Support
+
+LED's can be used to show the current status of remotebuzzer server actions.
+
+The wiring layout is
+
+```
+LED                   Raspberry
+
+Photolight      ---   GPIO 25
+Picture LED     ---   GPIO 19
+Collage LED     ---   GPIO 12
+Custom LED      ---   GPIO 24
+Video LED       ---   GPIO  9
+Shutdown LED    ---   GPIO 23
+Reboot LED      ---   GPIO 18
+Print LED       ---   GPIO 10
+Move2USB LED    ---   GPIO 11
+```
+
 ##### Known limitations:
 
 - Delete Picture: in order to be able to access the Delete button through rotary control, please activate admin setting General -> "Delete images without confirm request"
@@ -368,10 +413,9 @@ The following elements are currently not supported and not accessible through ro
 The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger signals.
 
 - Channel:  `photobooth-socket`
-- Commands: `start-picture`, `start-collage`
+- Commands: `start-picture`, `start-collage`, `collage-next`, `start-custom`, `start-video`, `print`, `rotary-cw`, `rotary-ccw`, `rotary-btn-press`, `move2usb`
 - Response: `completed` will be emitted to the client, once photobooth finished the task
 
-This functionality is experimental and largely untested. Not sure if there is a use-case but if you have one, happy to learn about it. Currently this does not support rotary encoder use but could be if needed.
 
 #### Remote trigger using simple web requests
 
@@ -381,12 +425,22 @@ Simple `GET` requests can be used to trigger single pictures or collages. Those 
 - `[Photobooth IP]` needs to match the configured value under `General` - `IP address of the Photobooth web server` and
 - `[Hardware Button Server Port]` the value from `Hardware Button` - `Enable Hardware Buttons`
 
-The available endpoints are:
+The available endpoints, depending on enabled features and hardware button options, are:
 - `[Base Url]/` - Simple help page with all available endpoints
 - `[Base Url]/commands/start-picture` - Triggers a single picture
 - `[Base Url]/commands/start-collage` - Triggers a collage
+- `[Base Url]/commands/start-custom` - Triggers custom button action
+- `[Base Url]/commands/start-print` - Triggers print
+- `[Base Url]/commands/start-video` - Triggers a video capture
+- `[Base Url]/commands/reboot-now` - Triggers reboot command
+- `[Base Url]/commands/shutdown-now` - Triggers shutdown command
+- `[Base Url]/commands/rotary-cw` - Focus next element
+- `[Base Url]/commands/rotary-ccw` - Focus previous element
+- `[Base Url]/commands/rotary-btn-press` - Triggers a click action
+- `[Base Url]/commands/'start-move2usb` - Trigger picture move to USB
 
 These trigger URLs can be used for example with [myStrom WiFi Buttons](https://mystrom.com/wifi-button/) or [Shelly Buttons](https://shelly.cloud/products/shelly-button-1-smart-home-automation-device/) (untested).
+
 
 ##### Installation steps for myStrom WiFi Button
 - Be sure to connect the button to the same network as the photobooth
@@ -507,7 +561,7 @@ sudo bash install-gphoto-python.sh
 Change your Photobooth configuration:
 
 - _"Live Preview_": _"Preview Mode"_: _"from device cam"_
-- _"Live Preview_": _"Execute start command for preview on take picture/collage"_:
+- _"Commands_": _"Execute start command for preview on take picture/collage"_:
   - if **enabled**:
     _"Commands"_: _"Command to generate a live preview"_: `python3 cameracontrol.py --bsm`
   - if **disabled**:
@@ -522,6 +576,14 @@ The _"Command to generate a live preview"_ is only executed if the _"Preview Mod
 There's no need to define the _"Command to kill live preview"_ while using the _cameracontrol.py_, so just empty that field. The _"Command to kill live preview"_ is only executed if defined.
 
 If you want to use the DSLR view as background video, enable _"Use stream for live preview as background"_ and disable the _"Execute start command for preview on take picture/collage"_ setting of Photobooth, which is enabled by default.
+
+
+If you're worried about the sensor of your DSLR but still want to use background video you can use `--bsmtime`.
+
+```sh
+python3 cameracontrol.py --bsmtime 1
+```
+With the parameter `--bsmtime` you can define a number of minutes after which the camera preview ends. Please note the last image of the preview stays for a few seconds before the background turns to black. Additionally you should add `python3 cameracontrol.py` to the *pre-photo command* to restart the preview if it got disabled by the timeout. Restarting the preview takes a few seconds.
 
 
 If you don't want to use the DSLR view as background video enable the _Execute start command for preview on take picture/collage_ setting of Photobooth and make sure `--bsm` was added to the preview command.
@@ -767,7 +829,7 @@ A USB drive / stick can be identified either by the USB stick label (e.g. `photo
 
 Pictures will be synced to the USB stick matched by the pattern, as long as it is mounted (aka USB stick is plugged in)
 
-Debugging: Check the server logs for errors at the Debug panel: [http://localhost/admin/debugpanel.php](http://localhost/admin/debugpanel.php)
+Debugging: Check the server logs for errors at the Debug panel: [http://localhost/admin/debugpanel](http://localhost/admin/debugpanel)
 
 ---
 
@@ -870,7 +932,7 @@ There's different reasons if you get the error "Something went wrong. Please try
 
 First of all, please set the **Loglevel** to **2** via admin panel (GENERAL section, [http://localhost/admin](http://localhost/admin)) and try again. You'll still see the error message, but we make sure to log enough information to see what's wrong.
 
-Now open the Debug panel ([http://localhost/admin/debugpanel.php](http://localhost/admin/debugpanel.php)) and check the Photobooth log for error messages. You should see something like this:
+Now open the Debug panel ([http://localhost/admin/debugpanel](http://localhost/admin/debugpanel)) and check the Photobooth log for error messages. You should see something like this:
 
 ```
 2023-01-03T08:34:37+01:00:
@@ -1029,3 +1091,36 @@ gphoto2 –wait-event=300ms –capture-image-and-download –filename=%s
 ```
 
 Source: [https://www.dennis-henss.de/2020/01/25/raspberry-pi-fotobox-fuer-hochzeiten-und-geburtstage/#comment-1211](https://www.dennis-henss.de/2020/01/25/raspberry-pi-fotobox-fuer-hochzeiten-und-geburtstage/#comment-1211)
+
+### How to upload pictures to a remote server after picture has been taken?
+
+#### Goal: 
+After a picture is taken with the photobox upload it automatically to a remote server.
+
+#### Usecase: 
+You have a remote server (e.g. with your website on it) or another Raspberry Pi to which you’d like instantly synchronizing your taken pictures. Also you could upload the pictures to a remote server and make them available through the QR code over the internet. By this you would not require people to access a local Wifi to download the picture from your local device which is running your Photobox. 
+
+#### How to:
+-	You should have a remote server with an SSH login. Know your username and password: (e.g.: [username.strato-hosting.eu]@ssh.strato.de)
+-	We will be using the Post-photo script / command of the Photobox which you can find in the admin panel in the section Commands. 
+-	The command is being executed after the picture has been taken and gets the picture’s name as an attribute.
+-	Command: 	
+```sh
+scp /var/www/html/photobooth/data/images/%s [username@remotehost]:/[path_to_where_you_want_to_store_the_pictures_on_the_remote_host]
+```
+
+-	If we keep it like that the remote server would require the source server to type in a password each time a picture is being copied to the remote server. An SSH connection using a private/public SSH key needs to be established:
+
+1. Create a public/private key-pair for the www-data user on the source machine (why for that user? The www-data user is executing the Post-photo script/command in the background) – Do not enter a passphrase when prompted.
+```sh
+sudo -u www-data ssh-keygen -t rsa
+```
+2. Copy the public key to the remote (destination) server 
+```sh
+sudo -u www-data ssh-copy-id [username@remotehost]
+```
+3. You can now manually test whether the connection works. Try to copy anything to the remote server and change the file in the below example to a file that you actually have on your source machine. You shouldn’t be prompted with a password, but the copy and transfer should complete successfully just with the following command. If that is going to be successful, copying your pictures automatically should work now.
+```sh
+sudo -u www-data scp /var/www/html/photobooth/data/images/20230129_125148.jpg [username@remotehost]:/[path_to_where_you_want_to_store_the_pictures]
+```
+You can now use the URL with which you can access your remote server from the internet and paste it into the QR code field in the Photobox admin panel. Now using the QR code your pictures can be downloaded from your remote server. 

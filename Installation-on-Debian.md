@@ -14,14 +14,7 @@ To make the installation as simple as possible, we have created an installation 
 
 If you encounter any issues or want more freedom to configure your Pi, Computer or Laptop, we recommend you look at the detailed installation instruction below.
 
-The installation script is intendet to work on Raspberry Pi OS based on Debian bullseye (released October 2021), but it should also work on Raspberry Pi OS based on Debian buster.
-
-**Note:** Node.js **must** be installed in v14 or greater. Currently only v14 and v16 are tested. Our installer will check your Node.js version and suggest an update/downgrade if needed.
-
-**Special note on 32 bit Raspberry Pi OS:** You **must** add `arm_64bit=0` to your `/boot/config.txt` and reboot once before running the Photobooth installer.
-
-The Raspberry Pi foundation uses a 64bit kernel while the system is 32bit. The Installation fails because the v4l2loopback module can't be compiled for a 32bit OS while using a 64bit kernel.
-
+The installation script is intendet to work on Raspberry Pi OS based on Debian bullseye, but it should also work on Raspberry Pi OS based on Debian buster.
 
 A valid username is needed to run the installer. Your OS username must be passed by the `-username` flag to the installer.
 ```sh

@@ -6,6 +6,7 @@
 <a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
 <a href="https://photoboothproject.github.io/DONATION" class="button hidden">Donate</a>
 <a href="https://photoboothproject.github.io/projects.html" class="button hidden">User Projects</a>
+<a href="https://github.com/PhotoboothProject/photobooth" class="button hidden">GitHub</a>
 
 [![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-blue.svg)](https://t.me/PhotoboothGroup)   [![Translate on Crowdin](https://img.shields.io/badge/Traslate%20on-Crowdin-green.svg)](https://crowdin.com/project/photobooth)
 

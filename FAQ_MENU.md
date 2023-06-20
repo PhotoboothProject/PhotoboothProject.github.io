@@ -5,6 +5,7 @@
 <a href="https://photoboothproject.github.io/INSTALL" class="button hidden">Install</a>
 <a href="https://photoboothproject.github.io/FAQ_MENU" class="button hidden">FAQ</a>
 <a href="https://photoboothproject.github.io/DONATION" class="button hidden">Donate</a>
+<a href="https://github.com/PhotoboothProject/photobooth" class="button hidden">GitHub</a>
 
 ---
 

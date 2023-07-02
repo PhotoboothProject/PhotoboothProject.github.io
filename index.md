@@ -24,7 +24,7 @@ _Latest development version:_
 
 ---
 
-![](resources/img/start.png)
+![](https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/resources/img/logo/banner.png)
 
 ---
 

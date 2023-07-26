@@ -87,13 +87,15 @@ sudo apt install -y lighttpd php-fpm
 ### Install dependencies
 
 ```sh
-sudo apt install -y ffmpeg gphoto2 libimage-exiftool-perl nodejs php-gd php-zip python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
+sudo apt install -y curl git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-gd php-zip python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
 ```
 
 To install all client dependencies you also have to [install yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable):
 ```sh
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/yarnkey.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
+
 sudo apt update && sudo apt install -y yarn
 ```
 

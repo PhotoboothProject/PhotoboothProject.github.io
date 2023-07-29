@@ -87,7 +87,7 @@ sudo apt install -y lighttpd php-fpm
 ### Install dependencies
 
 ```sh
-sudo apt install -y curl git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-gd php-zip python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
+sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-gd php-zip python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
 ```
 
 To install all client dependencies you also have to [install yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable):
@@ -160,6 +160,7 @@ sudo /etc/init.d/cups restart
 Please follow the steps mentioned in the FAQ:
 
 **Q:** [Can I use Hardware Button to take a Picture?](FAQ#can-i-use-hardware-button-to-take-a-picture)
+
 
 ### Try it out
 

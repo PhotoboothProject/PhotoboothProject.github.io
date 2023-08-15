@@ -256,7 +256,7 @@ For the **LED Support** GPIOs need to be set as OUTPUT.
 
 ##### Troubleshooting / Debugging
 
-**Important: For WLAN connected screens you must make sure to set the IP address of the Photobooth web server in the admin settings - section "General"**. The loopback IP (127.0.0.1) does not work, it has to be the exact IP address of the Photobooth web server, to which the remote display connects to.
+**Important: For WLAN connected screens you must make sure to set the IP address of the Remote buzzer server in the admin settings.** The loopback IP (127.0.0.1) does not work, it has to be the exact IP address of the Remote buzzer Server.
 
 Having trouble?
 - Set Photobooth loglevel to 1 (or above). (admin screen -> general section)
@@ -288,7 +288,6 @@ The server supports up to four connected hardware buttons for the following func
 
 1) **Picture Button**
 
-- Defaults to GPIO21
 - Short button press (default <= 2 sec) will trigger a single picture in Photobooth
 - Long button press (default > 2 sec) will trigger a collage in Photobooth
 
@@ -300,7 +299,6 @@ The server supports up to four connected hardware buttons for the following func
 
 2)  **Collage Button**
 
-- Defaults to GPIO20
 - Button press will trigger a collage in Photobooth.
 
 **Note:**
@@ -310,7 +308,6 @@ The server supports up to four connected hardware buttons for the following func
 
 3) **Shutdown Button**
 
-- Defaults to GPIO16
 - This button will initate a safe system shutdown and halt (`shutdown -h now`).
 
 **Note:**
@@ -320,27 +317,22 @@ The server supports up to four connected hardware buttons for the following func
 
 4) **Print Button**
 
-- Defaults to GPIO26
 - This button will initiate a print of the current picture either from the results screen or the gallery.
 
 5) **Reboot Button**
 
-- Defaults to GPIO23
 - This button will initate a safe system shutdown and halt (`shutdown -r now`).
 
 6) **Video Button**
 
-- Defaults to GPIO9
 - This button will initiate the recording of a short video.
 
 7) **Custom Button**
 
-- Defaults to GPIO24
 - Button press will trigger a single picture in Photobooth
 
 8) **Move2USB Button**
 
-- Defaults to GPIO10
 - This button will initiate the copy/move of all pictures an videos (jpg, gif und mp4) to a USB-thumb.
 - In the admin panel you can choose between disabled, copy and move.
 
@@ -747,7 +739,7 @@ Tested working setup:
 
 ### How to only open the gallery to avoid people taking pictures?
 
-Open [http://localhost/gallery.php](http://localhost/gallery.php) in your browser (you can replace `localhost` with your IP adress).
+Open [http://localhost/gallery](http://localhost/gallery) in your browser (you can replace `localhost` with your IP adress).
 
 ---
 
@@ -820,7 +812,7 @@ Use the `install-photobooth.sh` script to get the operating system setup in plac
 **Note:** If you have declined the question to enable the USB sync file backup while running the `install-photobooth.sh` you need to run the following commands to get the operating system setup done:
 
 ```sh
-wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/enable-usb-sync.sh
+wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/scripts/enable-usb-sync.sh
 sudo bash enable-usb-sync.sh -username='<YourUsername>'
 ```
 
@@ -1125,3 +1117,32 @@ sudo -u www-data ssh-copy-id [username@remotehost]
 sudo -u www-data scp /var/www/html/photobooth/data/images/20230129_125148.jpg [username@remotehost]:/[path_to_where_you_want_to_store_the_pictures]
 ```
 You can now use the URL with which you can access your remote server from the internet and paste it into the QR code field in the Photobox admin panel. Now using the QR code your pictures can be downloaded from your remote server. 
+
+### How to use the image randomizer
+
+To use the image randomizer images must be placed inside private/images/{folderName}.  
+For hassle-free (ssh/sftp-free) upload, you may want to use the integrated images uploader: [http://localhost/admin/upload](http://localhost/admin/upload).
+
+
+#### Use for PICTURE FRAMES:
+
+1. Upload / Copy all the (transparent) frames you want to private/images/{FrameFolder}
+2. Enable picture_take_frame
+3. specify picture_frame url : http://localhost/api/randomImg.php?dir={FrameFolder}
+
+#### Use for COLLAGE FRAMES:
+
+1. Upload / Copy all the (transparent) frames you want to private/images/{FrameFolder}
+2. Enable collage_take_frame (always or once)
+3. specify collage_frame url : http://localhost/api/randomImg.php?dir={FrameFolder}
+
+#### Use for BACKGROUNDS:
+
+1. Upload / Copy all the backgrounds you want to private/images/{BgFolder}
+2. specify collage_background url : http://localhost/api/randomImg.php?dir={BgFolder}
+
+**NOTES:**
+- Replace _"localhost"_ with your IP-Adress.
+- Same thing can be applied for collage_placeholderpath so a random holder image takes place.
+- You can specify a diffrent {FrameFolder} for collage frames if needed.
+

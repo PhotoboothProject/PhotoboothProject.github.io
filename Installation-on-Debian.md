@@ -90,15 +90,6 @@ sudo apt install -y lighttpd php-fpm
 sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-gd php-zip python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
 ```
 
-To install all client dependencies you also have to [install yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable):
-```sh
-curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/yarnkey.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
-
-sudo apt update && sudo apt install -y yarn
-```
-
 **Optional:** If you have a new camera, you can also install the latest version of libgphoto2 directly from the maintainer. Choose "Install last stable release":
 ```sh
 wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-updater.sh
@@ -123,12 +114,12 @@ rm -r html/*
 git clone https://github.com/PhotoboothProject/photobooth html
 cd /var/www/html
 git submodule update --init
-yarn install
-yarn build
+npm install
+npm run build
 exit
 ```
 
-**Please note:** depending on your hardware `yarn install` and `yarn build` takes up to 15min! Node.js is needed in v14 or later!
+**Please note:** depending on your hardware `npm install` and `npm run build` takes up to 15min! Node.js is needed in v18 or later!
 
 Next we have to give our webserver user access to the USB device:
 ```sh

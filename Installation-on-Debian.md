@@ -87,7 +87,7 @@ sudo apt install -y lighttpd php-fpm
 ### Install dependencies
 
 ```sh
-sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-dom php-gd php-zip php-mbstring python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
+sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-xml php-gd php-zip php-mbstring python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
 ```
 
 **Optional:** If you have a new camera, you can also install the latest version of libgphoto2 directly from the maintainer. Choose "Install last stable release":

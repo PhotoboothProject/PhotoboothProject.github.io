@@ -7,6 +7,8 @@
 <a href="https://photoboothproject.github.io/DONATION" class="button hidden">Donate</a>
 <a href="https://github.com/PhotoboothProject/photobooth" class="button hidden">GitHub</a>
 
+---
+
 # FAQ - Frequently asked questions
 
 ### Is my Camera supported?

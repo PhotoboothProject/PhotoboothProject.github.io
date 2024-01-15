@@ -12,10 +12,12 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
 ## 4.4.0 (09.01.2024)
 
 **Breaking changes**
+
 * requires Node.js v18.17.0 or newer
 * requires npm 9.6.7 or newer
 
 **General**
+
   * api: get rid of deleteTmpPhoto
   * cameracontrol.py: don't fail capturing images using Sony Cameras
   * result screen: reload after all files have been deleted
@@ -77,6 +79,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   * remotebuzzer-server: allow GPIO to be any number [](https://github.com/PhotoboothProject/photobooth/pull/529)
 
 **Bugfix**
+
   * fix: start shutter animation independent of cheese image
   * cameracontrol.py: don't fail capturing images using Sony Cameras
   * core: fix Test value for CameraDisplayMode
@@ -139,6 +142,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   * lib(resize): fix rotating images on PHP8
 
 **Feature**
+
   * config: make time adjustable a notification is visible
   * preview: allow to delay the visibility of the preview from URL
   * preview: allow execution of start/stop cmd without validation
@@ -150,6 +154,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   * task: enable lazy loading for gallery images [](https://github.com/PhotoboothProject/photobooth/pull/383)
 
 **FAQ**
+
   * FAQ: add note to fix broken v4l2loopback module [](https://github.com/PhotoboothProject/photobooth/pull/109)
   * FAQ: add notes about issues while taking a picture
   * faq: a username is needed while running enable-usb-sync.sh
@@ -163,6 +168,7 @@ Please read the license notice [here](https://github.com/PhotoboothProject/photo
   * FAQ: adjust GPIO information for Raspberry Pi 5; adjust for Pi OS versions
 
 **Install**
+
   * install: adjust PolKit rule naming
   * install-photobooth: allow to add PolKit rule on all linux distros
   * install-photobooth: PolKit rule doesn't depend on update

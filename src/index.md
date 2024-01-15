@@ -38,7 +38,7 @@ Make your changes, upload them to your fork and create a [pull request](https://
 
 # Changelog
 
-View all version changes [here](changelog).
+View all version changes [here](changelog.md).
 
 ---
 
@@ -68,7 +68,7 @@ The visible countdown now is independent of the time we need to take an image, t
 Also we now don't wait for the cheese message to end, the picture will be taken without waiting for it.  
 A small bug was fixed, where the shutter animation was started twice if an cheese image is used.
 
-Like always: The full Changelog can be found [here](changelog).
+Like always: The full Changelog can be found [here](changelog.md).
 
 
 Enjoy Photobooth v4.3.1!
@@ -82,7 +82,7 @@ Photobooth v4.3.0 released!
 Some minor bugs have been fixed, build dependencies have been updated, new Features have been added.
 
 
-Like always: The full Changelog can be found [here](changelog).
+Like always: The full Changelog can be found [here](changelog.md).
 
 Enjoy Photobooth v4.3.0!
 
@@ -95,7 +95,7 @@ Photobooth v4.2.0 released today!
 Some minor bugs have been fixed, PHPMailer and build dependencies have been updated.
 
 
-The full Changelog can be found [here](changelog).
+The full Changelog can be found [here](changelog.md).
 
 Enjoy Photobooth v4.2.0!
 
@@ -110,7 +110,7 @@ Some bugs have been fixed, some new features have made it's way into the new ver
 
 Logging is added to save and reset actions via Adminpanel for easier debugging.
 
-The full Changelog can be found [here](changelog).
+The full Changelog can be found [here](changelog.md).
 
 Enjoy Photobooth v4.1.0!
 
@@ -126,13 +126,13 @@ Overall the code got optimized and cleaned up. There's also a lot of new options
 
 Photobooth is now again compatible with Windows, also PHP8 won't cause trouble.
 
-The full Changelog can be found [here](changelog).
+The full Changelog can be found [here](changelog.md).
 
 If you find a bug you're welcome to report it on the [GitHub issue page](https://github.com/PhotoboothProject/photobooth/issues).
 
 New Images with preinstalled Photobooth will be available next days.
 
-[Update instructions](update) have been updated, you can now easily update your existing git installation of Photobooth using the photobooth installer!
+[Update instructions](update/index.md) have been updated, you can now easily update your existing git installation of Photobooth using the photobooth installer!
 
 Enjoy Photobooth v4.0.0!
 

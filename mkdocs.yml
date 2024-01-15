@@ -10,13 +10,16 @@ docs_dir: src
 site_dir: docs
 
 theme:
-  name: mkdocs
+  name: readthedocs
   nav_style: dark
   highlightjs: true
   hljs_languages:
     - yaml
     - rust
   locale: en
+
+extra_css:
+  - assets/css/extra.css
 
 nav:
   - Home: index.md

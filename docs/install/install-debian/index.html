@@ -186,7 +186,7 @@ sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;'
 To use NGINX run</p>
 <pre><code class="language-sh">sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;' -webserver='nginx'
 </code></pre>
-<p>(additional Setup note: <a href="FAQ#cromakeying-is-saving-without-finishing-saving">Cromakeying is saving without finishing saving</a> ).</p>
+<p>(additional Setup note: <a href="faq#cromakeying-is-saving-without-finishing-saving">Cromakeying is saving without finishing saving</a> ).</p>
 <p>To use Lighttpd as Webserver run</p>
 <pre><code class="language-sh">sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;' -webserver='lighttpd'
 </code></pre>
@@ -207,11 +207,11 @@ NGINX has a smaller memory footprint and typically better performance, which is 
 <h3 id="or-install-nginx-php">or Install NGINX &amp; PHP</h3>
 <pre><code class="language-sh">sudo apt install -y nginx php-fpm
 </code></pre>
-<p><a href="Installation-on-Debian-nginx">Additional needed steps to enable PHP in NGINX</a></p>
+<p><a href="../install-nginx/">Additional needed steps to enable PHP in NGINX</a></p>
 <h3 id="or-install-lighttpd-php">or Install Lighttpd &amp; PHP</h3>
 <pre><code class="language-sh">sudo apt install -y lighttpd php-fpm
 </code></pre>
-<p><a href="Installation-on-Debian-lighttpd">Additional needed steps to enable PHP in Lighttpd</a></p>
+<p><a href="../install-lighttpd/">Additional needed steps to enable PHP in Lighttpd</a></p>
 <h2 id="install-dependencies">Install dependencies</h2>
 <pre><code class="language-sh">sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-xml php-gd php-zip php-mbstring python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
 </code></pre>
@@ -254,7 +254,7 @@ sudo /etc/init.d/cups restart
 </code></pre>
 <h2 id="install-remote-buzzer-support">Install Remote Buzzer support</h2>
 <p>Please follow the steps mentioned in the FAQ:</p>
-<p><strong>Q:</strong> <a href="FAQ#can-i-use-hardware-button-to-take-a-picture">Can I use Hardware Button to take a Picture?</a></p>
+<p><strong>Q:</strong> <a href="faq#can-i-use-hardware-button-to-take-a-picture">Can I use Hardware Button to take a Picture?</a></p>
 <h2 id="try-it-out">Try it out</h2>
 <p>Now you should restart your Raspberry Pi to apply those settings:</p>
 <pre><code class="language-sh">reboot

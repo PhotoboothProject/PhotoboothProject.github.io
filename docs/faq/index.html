@@ -1,260 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Photobooth Team">
-        <link rel="canonical" href="https://photoboothproject.github.io/faq/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>FAQ - Photobooth Project</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Photobooth Team" /><link rel="canonical" href="https://photoboothproject.github.io/faq/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FAQ - Photobooth Project</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ";
+        var mkdocs_page_input_path = "faq/index.md";
+        var mkdocs_page_url = "/faq/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
+      <script>hljs.highlightAll();</script> 
+</head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="..">Photobooth Project</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="wy-body-for-nav" role="document">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../changelog/" class="nav-link">Changelog</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../install/prerequisites/" class="dropdown-item">Prerequisites</a>
-</li>
-                                    
-<li>
-    <a href="../install/supported_platformscand_cameras/" class="dropdown-item">Supported Platforms and Cameras</a>
-</li>
-                                    
-<li>
-    <a href="../install/install-debian/" class="dropdown-item">Install on Debian</a>
-</li>
-                                    
-<li>
-    <a href="../install/install-nginx/" class="dropdown-item">Enable PHP in nginx</a>
-</li>
-                                    
-<li>
-    <a href="../install/install-lighttpd/" class="dropdown-item">Enable PHP in Lighttpd</a>
-</li>
-                                    
-<li>
-    <a href="../install/install-windows/" class="dropdown-item">Install on Windows</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../update/update-linux/" class="dropdown-item">Update on linux</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="./" class="dropdown-item active">FAQ</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="navitem">
-                                <a href="https://t.me/PhotoboothGroup" class="nav-link">Chat on Telegram</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="https://crowdin.com/project/photobooth" class="nav-link">Translate Photobooth</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../donation/" class="nav-link">Donation</a>
-                            </li>
-                        </ul>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Photobooth Project
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../update/update-linux/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../donation/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/PhotoboothProject/PhotoboothProject.github.io/blob/master/src/faq/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#faq-frequently-asked-questions" class="nav-link">FAQ - Frequently asked questions</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#is-my-camera-supported" class="nav-link">Is my Camera supported?</a>
-              <ul class="nav flex-column">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
               </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#is-pi-camera-supported" class="nav-link">Is Pi Camera supported?</a>
-              <ul class="nav flex-column">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
               </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ive-found-a-bug-how-can-i-report" class="nav-link">I've found a bug, how can I report?</a>
-              <ul class="nav flex-column">
+              <p class="caption"><span class="caption-text">Install</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/prerequisites/">Prerequisites</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/supported_platformscand_cameras/">Supported Platforms and Cameras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/install-debian/">Install on Debian</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/install-nginx/">Enable PHP in nginx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/install-lighttpd/">Enable PHP in Lighttpd</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../install/install-windows/">Install on Windows</a>
+                  </li>
               </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ive-a-white-page-after-updating-to-latest-source-how-can-i-solve-this" class="nav-link">I've a white page after updating to latest Source, how can I solve this?</a>
-              <ul class="nav flex-column">
+              <p class="caption"><span class="caption-text">Update</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../update/update-linux/">Update on linux</a>
+                  </li>
               </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-do-i-change-the-configuration" class="nav-link">How do I change the configuration?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-change-the-language" class="nav-link">How to change the language?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-can-i-test-my-current-photo-settings" class="nav-link">How can I test my current photo settings?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-can-i-test-my-current-collage-settings" class="nav-link">How can I test my current collage settings?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-can-setup-a-custom-collage-design" class="nav-link">How can setup a custom collage design?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-keep-pictures-on-my-camera-using-gphoto2" class="nav-link">How to keep pictures on my Camera using gphoto2?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cromakeying-is-saving-without-finishing-saving" class="nav-link">Cromakeying is saving without finishing saving</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#can-i-use-hardware-button-to-take-a-picture" class="nav-link">Can I use Hardware Button to take a Picture?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-do-i-enable-kiosk-mode-to-automatically-start-photobooth-in-full-screen" class="nav-link">How do I enable Kiosk Mode to automatically start Photobooth in full screen?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-hide-the-mouse-cursor-disable-screen-blanking-and-screen-saver" class="nav-link">How to hide the mouse cursor, disable screen blanking and screen saver?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-use-a-live-stream-as-background-at-countdown" class="nav-link">How to use a live stream as background at countdown?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#can-i-use-a-live-stream-as-background" class="nav-link">Can I use a live stream as background?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ive-trouble-setting-up-e-mail-config-how-do-i-solve-my-problem" class="nav-link">I've trouble setting up E-Mail config. How do I solve my problem?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-only-open-the-gallery-to-avoid-people-taking-pictures" class="nav-link">How to only open the gallery to avoid people taking pictures?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#chromakeying-isnt-working-if-i-access-the-photobooth-page-on-my-raspberry-pi-but-it-works-if-i-access-photobooth-from-an-external-device-eg-mobile-phone-or-tablet-how-can-i-solve-the-problem" class="nav-link">Chromakeying isn't working if I access the Photobooth page on my Raspberry Pi, but it works if I access Photobooth from an external device (e.g. mobile phone or tablet). How can I solve the problem?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-adjust-the-phpini-file" class="nav-link">How to adjust the php.ini file?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#automatic-picture-syncing-to-usb-stick" class="nav-link">Automatic picture syncing to USB stick</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#raspberry-touchpanel-dsi-simultaneously-with-hdmi" class="nav-link">Raspberry Touchpanel DSI simultaneously with HDMI</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-administer-cups-remotely-using-the-web-interface" class="nav-link">How to administer CUPS remotely using the web interface?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-does-the-connection-to-the-ftp-server-work" class="nav-link">How does the connection to the FTP server work?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#i-get-the-error-message-something-went-wrong-while-taking-a-picure-what-can-i-do" class="nav-link">I get the error message "Something went wrong." while taking a picure, what can i do?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#gphoto2-troubleshooting" class="nav-link">GPhoto2 troubleshooting</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-upload-pictures-to-a-remote-server-after-picture-has-been-taken" class="nav-link">How to upload pictures to a remote server after picture has been taken?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-use-the-image-randomizer" class="nav-link">How to use the image randomizer</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
+              <p class="caption"><span class="caption-text">FAQ</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#is-my-camera-supported">Is my Camera supported?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#is-pi-camera-supported">Is Pi Camera supported?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ive-found-a-bug-how-can-i-report">I've found a bug, how can I report?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ive-a-white-page-after-updating-to-latest-source-how-can-i-solve-this">I've a white page after updating to latest Source, how can I solve this?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-i-change-the-configuration">How do I change the configuration?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-change-the-language">How to change the language?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-update-or-add-translations">How to update or add translations?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#on-v230-and-newer">On v2.3.0 and newer:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#on-v220-and-older">On v2.2.0 and older:</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-can-i-test-my-current-photo-settings">How can I test my current photo settings?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-can-i-test-my-current-collage-settings">How can I test my current collage settings?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-can-setup-a-custom-collage-design">How can setup a custom collage design?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-keep-pictures-on-my-camera-using-gphoto2">How to keep pictures on my Camera using gphoto2?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cromakeying-is-saving-without-finishing-saving">Cromakeying is saving without finishing saving</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#can-i-use-hardware-button-to-take-a-picture">Can I use Hardware Button to take a Picture?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#key-code-using-connected-hid-devices">Key code using connected HID devices</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remotebuzzer-hardware-button-led-feature-using-gpio-connected-hardware-raspberry-pi-only">Remotebuzzer Hardware Button &amp; LED feature using GPIO connected hardware (Raspberry Pi only)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-debugging">Troubleshooting / Debugging</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#button-support">Button Support</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rotary-encoder">Rotary Encoder</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#led-support">LED Support</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#known-limitations">Known limitations:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remote-trigger-using-socketio-experimental">Remote trigger using Socket.io (experimental)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remote-trigger-using-simple-web-requests">Remote trigger using simple web requests</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation-steps-for-mystrom-wifi-button">Installation steps for myStrom WiFi Button</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-i-enable-kiosk-mode-to-automatically-start-photobooth-in-full-screen">How do I enable Kiosk Mode to automatically start Photobooth in full screen?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#autostart-on-pi-os-bookworm">Autostart on Pi OS Bookworm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#autostart-on-pi-os-bullseye-and-prior">Autostart on Pi OS Bullseye and prior</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-hide-the-mouse-cursor-disable-screen-blanking-and-screen-saver">How to hide the mouse cursor, disable screen blanking and screen saver?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#solution-a">Solution A</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#solution-b">Solution B</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-use-a-live-stream-as-background-at-countdown">How to use a live stream as background at countdown?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#preview-from-device-cam">Preview "from device cam"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preview-from-dslr">Preview from DSLR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preview-from-url">Preview "from URL"</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#can-i-use-a-live-stream-as-background">Can I use a live stream as background?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ive-trouble-setting-up-e-mail-config-how-do-i-solve-my-problem">I've trouble setting up E-Mail config. How do I solve my problem?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-only-open-the-gallery-to-avoid-people-taking-pictures">How to only open the gallery to avoid people taking pictures?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chromakeying-isnt-working-if-i-access-the-photobooth-page-on-my-raspberry-pi-but-it-works-if-i-access-photobooth-from-an-external-device-eg-mobile-phone-or-tablet-how-can-i-solve-the-problem">Chromakeying isn't working if I access the Photobooth page on my Raspberry Pi, but it works if I access Photobooth from an external device (e.g. mobile phone or tablet). How can I solve the problem?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-adjust-the-phpini-file">How to adjust the php.ini file?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#automatic-picture-syncing-to-usb-stick">Automatic picture syncing to USB stick</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raspberry-touchpanel-dsi-simultaneously-with-hdmi">Raspberry Touchpanel DSI simultaneously with HDMI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-administer-cups-remotely-using-the-web-interface">How to administer CUPS remotely using the web interface?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-does-the-connection-to-the-ftp-server-work">How does the connection to the FTP server work?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#i-get-the-error-message-something-went-wrong-while-taking-a-picure-what-can-i-do">I get the error message "Something went wrong." while taking a picure, what can i do?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gphoto2-troubleshooting">GPhoto2 troubleshooting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hardware-issues">Hardware issues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permission-problem">Permission problem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#special-notes">Special notes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#canon-eos-1300d">Canon EOS 1300D</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-upload-pictures-to-a-remote-server-after-picture-has-been-taken">How to upload pictures to a remote server after picture has been taken?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#goal">Goal:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usecase">Usecase:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to">How to:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-use-the-image-randomizer">How to use the image randomizer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#use-for-picture-frames">Use for PICTURE FRAMES:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#use-for-collage-frames">Use for COLLAGE FRAMES:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#use-for-backgrounds">Use for BACKGROUNDS:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://t.me/PhotoboothGroup">Chat on Telegram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://crowdin.com/project/photobooth">Translate Photobooth</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../donation/">Donation</a>
+                </li>
+              </ul>
+      </div>
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    </nav>
 
-<h1 id="faq-frequently-asked-questions">FAQ - Frequently asked questions</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Photobooth Project</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">FAQ</li>
+      <li class="breadcrumb-item active">FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/PhotoboothProject/PhotoboothProject.github.io/blob/master/src/faq/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="faq-frequently-asked-questions">FAQ - Frequently asked questions</h1>
 <h2 id="is-my-camera-supported">Is my Camera supported?</h2>
 <p>Some DSLR and Compact Cameras are not supported by this project. Please check for your specific model <a href="http://gphoto.org/proj/libgphoto2/support.php">here</a>.</p>
 <hr />
@@ -1282,83 +1280,56 @@ For hassle-free (ssh/sftp-free) upload, you may want to use the integrated image
 <p><strong>NOTES:</strong>
 - Replace <em>"localhost"</em> with your IP-Adress.
 - Same thing can be applied for collage_placeholderpath so a random holder image takes place.
-- You can specify a diffrent {FrameFolder} for collage frames if needed.</p></div>
+- You can specify a diffrent {FrameFolder} for collage frames if needed.</p>
+              
             </div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../update/update-linux/" class="btn btn-neutral float-left" title="Update on linux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../donation/" class="btn btn-neutral float-right" title="Donation">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/PhotoboothProject/PhotoboothProject.github.io" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../update/update-linux/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../donation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
-    </body>
+</body>
 </html>

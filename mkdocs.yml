@@ -11,6 +11,7 @@ site_dir: docs
 
 theme:
   name: mkdocs
+  nav_style: dark
   highlightjs: true
   hljs_languages:
     - yaml

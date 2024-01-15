@@ -44,7 +44,7 @@ to look like this:
 ## Start an FastCGI server for php (needs the php5-cgi package)
 fastcgi.server += ( ".php" => 
 	((
-		"socket" => "/var/run/php/php7.3-fpm.sock",
+		"socket" => "/var/run/php/php8.2-fpm.sock",
 		"broken-scriptfilename" => "enable"
 	))
 )

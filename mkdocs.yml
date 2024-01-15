@@ -6,6 +6,9 @@ site_author: Photobooth Team
 repo_url: https://github.com/PhotoboothProject/PhotoboothProject.github.io
 edit_uri: blob/master/docs/
 
+docs_dir: src
+site_dir: docs
+
 theme:
   name: mkdocs
   highlightjs: true

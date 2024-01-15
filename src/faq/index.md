@@ -77,9 +77,7 @@ Open `http://localhost/admin` in your Webbrowser and change the configuration fo
 
 ---
 
-### How to update or add translations?
-
-### On v2.3.0 and newer:
+## How to update or add translations?
 
 Photobooth joined Crowdin as localization manager, [join here](https://crowdin.com/project/photobooth) to translate Photobooth.
 
@@ -88,12 +86,6 @@ Crowdin gives a nice webinterface to make translating easy as possible. If there
 With Crowdin and your help translating we're able to get high-quality translations for all supported languages. Also it's easy to support a wider range of languages!
 
 Your language is missing? Don't worry, create a [localization request here](https://github.com/PhotoboothProject/photobooth/issues/new/choose) and we'll add it to the project.
-
-### On v2.2.0 and older:
-
-Edit the language file inside `resources/lang/` with your favorite text editor.
-
-Once you're done upload your changes and create a [pull request](https://github.com/PhotoboothProject/photobooth/pulls).
 
 ---
 
@@ -111,7 +103,7 @@ Open [http://localhost/test/collage.php](http://localhost/test/collage.php) in y
 
 ## How can setup a custom collage design?
 
-In the collage settings you can select the layout `private/collage.json`. This references a file with the given name in the photobooth's `private` folder. This file has to be created manually.
+In the collage settings you can select the layout `private/collage.json`. This references a file with the given name in the photobooth's `private` folder. This file has to be cred manually.
 
 Photobooth config **must** be saved again via Admin panel after `private/collage.json` was modified!
 

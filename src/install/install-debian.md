@@ -23,7 +23,7 @@ To use NGINX run
 sudo bash install-photobooth.sh -username='<YourUsername>' -webserver='nginx'
 ```
 
-(additional Setup note: [Cromakeying is saving without finishing saving](faq#cromakeying-is-saving-without-finishing-saving) ).
+(additional Setup note: [Cromakeying is saving without finishing saving](/faq#cromakeying-is-saving-without-finishing-saving) ).
 
 To use Lighttpd as Webserver run
 ```sh
@@ -139,7 +139,7 @@ sudo /etc/init.d/cups restart
 
 Please follow the steps mentioned in the FAQ:
 
-**Q:** [Can I use Hardware Button to take a Picture?](faq#can-i-use-hardware-button-to-take-a-picture)
+**Q:** [Can I use Hardware Button to take a Picture?](../faq#can-i-use-hardware-button-to-take-a-picture)
 
 
 ## Try it out

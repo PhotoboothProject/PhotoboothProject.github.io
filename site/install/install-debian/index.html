@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Photobooth Team">
+        <link rel="canonical" href="https://photoboothproject.github.io/install/install-debian/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Install on Debian - PhotoboothProject</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PhotoboothProject</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../changelog/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../prerequisites/" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="../supported_platformscand_cameras/" class="dropdown-item">Supported Platforms and Cameras</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Install on Debian</a>
+</li>
+                                    
+<li>
+    <a href="../install-nginx/" class="dropdown-item">Enable PHP in nginx</a>
+</li>
+                                    
+<li>
+    <a href="../install-lighttpd/" class="dropdown-item">Enable PHP in Lighttpd</a>
+</li>
+                                    
+<li>
+    <a href="../install-windows/" class="dropdown-item">Install on Windows</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update-linux/" class="dropdown-item">Update on linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../supported_platformscand_cameras/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../install-nginx/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/PhotoboothProject/PhotoboothProject.github.io/blob/master/docs/install/install-debian.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#automated-installation-on-raspberry-pi-os-previously-called-raspbian-and-on-debian-debian-based-distributions" class="nav-link">Automated installation on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#manually-install-photobooth-on-raspberry-pi-os-previously-called-raspbian-and-on-debian-debian-based-distributions" class="nav-link">Manually install Photobooth on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#update-your-system" class="nav-link">Update your system</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-a-webserver" class="nav-link">Install a Webserver</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-dependencies" class="nav-link">Install dependencies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-photobooth" class="nav-link">Install photobooth</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-remote-buzzer-support" class="nav-link">Install Remote Buzzer support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#try-it-out" class="nav-link">Try it out</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="automated-installation-on-raspberry-pi-os-previously-called-raspbian-and-on-debian-debian-based-distributions">Automated installation on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:</h1>
+<p>To make the installation as simple as possible, we have created an installation script for you. It will setup your Raspberry Pi, Computer or Laptop as a full blown Photobooth (using Apache Webserver). This means, Photobooth and all needed packages and dependencies get installed and the automatic camera mount is disabled. On a Raspberry Pi you can choose that Photobooth is started in fullscreen on startup.</p>
+<p>If you encounter any issues or want more freedom to configure your Pi, Computer or Laptop, we recommend you look at the detailed installation instruction below.</p>
+<p>The installation script is intendet to work on Raspberry Pi OS based on Debian bullseye, but it should also work on Raspberry Pi OS based on Debian buster.</p>
+<p>A valid username is needed to run the installer. Your OS username must be passed by the <code>-username</code> flag to the installer.</p>
+<pre><code class="language-sh">wget https://raw.githubusercontent.com/PhotoboothProject/photobooth/dev/install-photobooth.sh
+sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;'
+</code></pre>
+<p>For the user "pi", the command to install Photobooth needs to be:</p>
+<pre><code class="language-sh">sudo bash install-photobooth.sh -username='pi'
+</code></pre>
+<p>By default Apache is used for an easy and no-hassle setup as NGINX and Lighttpd need some additional steps.
+To use NGINX run</p>
+<pre><code class="language-sh">sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;' -webserver='nginx'
+</code></pre>
+<p>(additional Setup note: <a href="FAQ#cromakeying-is-saving-without-finishing-saving">Cromakeying is saving without finishing saving</a> ).</p>
+<p>To use Lighttpd as Webserver run</p>
+<pre><code class="language-sh">sudo bash install-photobooth.sh -username='&lt;YourUsername&gt;' -webserver='lighttpd'
+</code></pre>
+<p>To get to know all options you can simply run <code>sudo bash install-photobooth.sh -help</code>.</p>
+<h1 id="manually-install-photobooth-on-raspberry-pi-os-previously-called-raspbian-and-on-debian-debian-based-distributions">Manually install Photobooth on Raspberry Pi OS (previously called Raspbian) and on Debian / Debian based distributions:</h1>
+<p>The steps below were tested on "Raspberry Pi OS with desktop" based on Debian Buster, but should work for Debian and all Debian based distributions. Photobooth can also be used on any other PC/Laptop running a supported OS.</p>
+<h2 id="update-your-system">Update your system</h2>
+<pre><code class="language-sh">sudo apt update
+sudo apt dist-upgrade
+</code></pre>
+<h2 id="install-a-webserver">Install a Webserver</h2>
+<p>Currently NGINX, Lighttpd and Apache Webserver are supported.
+For an easy and no-hassle setup you should install Apache Webserver.
+NGINX has a smaller memory footprint and typically better performance, which is especially important on the Raspberry Pis, but it needs some additional steps until you're good to go. Also Lighttpd needs some additional steps.</p>
+<h3 id="install-apache-php">Install Apache &amp; PHP</h3>
+<pre><code class="language-sh">sudo apt install -y libapache2-mod-php
+</code></pre>
+<h3 id="or-install-nginx-php">or Install NGINX &amp; PHP</h3>
+<pre><code class="language-sh">sudo apt install -y nginx php-fpm
+</code></pre>
+<p><a href="Installation-on-Debian-nginx">Additional needed steps to enable PHP in NGINX</a></p>
+<h3 id="or-install-lighttpd-php">or Install Lighttpd &amp; PHP</h3>
+<pre><code class="language-sh">sudo apt install -y lighttpd php-fpm
+</code></pre>
+<p><a href="Installation-on-Debian-lighttpd">Additional needed steps to enable PHP in Lighttpd</a></p>
+<h2 id="install-dependencies">Install dependencies</h2>
+<pre><code class="language-sh">sudo apt install -y curl gcc g++ make git ffmpeg gphoto2 libimage-exiftool-perl nodejs php-xml php-gd php-zip php-mbstring python3 python3-gphoto2 python3-psutil python3-zmq rsync udisks2 v4l2loopback-dkms v4l-utils
+</code></pre>
+<p><strong>Optional:</strong> If you have a new camera, you can also install the latest version of libgphoto2 directly from the maintainer. Choose "Install last stable release":</p>
+<pre><code class="language-sh">wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-updater.sh
+wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/.env
+chmod +x gphoto2-updater.sh
+sudo ./gphoto2-updater.sh
+</code></pre>
+<h2 id="install-photobooth">Install photobooth</h2>
+<p>Give our webserver user access to <code>/var/www/</code>:</p>
+<pre><code class="language-sh">sudo chown -R www-data:www-data /var/www/
+</code></pre>
+<p>Get the Photobooth source:</p>
+<pre><code class="language-sh">cd /var/www/
+sudo -u www-data -s
+rm -r html/*
+git clone https://github.com/PhotoboothProject/photobooth html
+cd /var/www/html
+git submodule update --init
+npm install
+npm run build
+exit
+</code></pre>
+<p><strong>Please note:</strong> depending on your hardware <code>npm install</code> and <code>npm run build</code> takes up to 15min! Node.js is needed in v18 or later!</p>
+<p>Next we have to give our webserver user access to the USB device:</p>
+<pre><code class="language-sh">sudo gpasswd -a www-data plugdev
+</code></pre>
+<p>If you like to use a printer you need to have <code>CUPS</code> installed. On Raspbian <code>CUPS</code> is not installed by default:</p>
+<pre><code class="language-sh">sudo apt install -y cups
+</code></pre>
+<p>Next you also have to add your webserver user to the <code>lp</code> and <code>lpadmin</code> group:</p>
+<pre><code class="language-sh">sudo gpasswd -a www-data lp
+sudo gpasswd -a www-data lpadmin
+</code></pre>
+<p>By default the CUPS webinterface can only be accessed via <a href="http://localhost:631">http://localhost:631</a> from your local machine.</p>
+<p>To remote access CUPS from other clients you need to run the following commands:</p>
+<pre><code class="language-sh">sudo cupsctl --remote-any
+sudo /etc/init.d/cups restart
+</code></pre>
+<h2 id="install-remote-buzzer-support">Install Remote Buzzer support</h2>
+<p>Please follow the steps mentioned in the FAQ:</p>
+<p><strong>Q:</strong> <a href="FAQ#can-i-use-hardware-button-to-take-a-picture">Can I use Hardware Button to take a Picture?</a></p>
+<h2 id="try-it-out">Try it out</h2>
+<p>Now you should restart your Raspberry Pi to apply those settings:</p>
+<pre><code class="language-sh">reboot
+</code></pre>
+<p>Please use the following to test if your Webserver is able to take pictures (gphoto must be executed in a dir with write permission):</p>
+<pre><code class="language-sh">cd /var/www/html
+sudo -u www-data gphoto2 --capture-image
+</code></pre>
+<p>If it is not working, your operation system probably automatically mounted your camera. You can unmount it, or remove execution permission for gphoto2 Volume Monitor to ensure that the camera is not mounted anymore:</p>
+<pre><code class="language-sh">sudo chmod -x /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+</code></pre>
+<p>Now reboot or unmount your camera with the following commands (you get a list of mounted cameras with <code>gio mount -l</code>):</p>
+<pre><code>gio mount -u gphoto2://YOUR-CAMERA
+</code></pre>
+<p>Now try again.</p>
+<p>If everything is working, open the IP address (you get it via <code>ip addr</code>) of your Raspberry Pi, or if you open it on your machine, type <a href="http://localhost">http://localhost</a> in your browser.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

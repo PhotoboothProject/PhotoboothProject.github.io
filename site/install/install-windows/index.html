@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Photobooth Team">
+        <link rel="canonical" href="https://photoboothproject.github.io/install/install-windows/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Install on Windows - PhotoboothProject</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PhotoboothProject</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../changelog/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Install <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../prerequisites/" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="../supported_platformscand_cameras/" class="dropdown-item">Supported Platforms and Cameras</a>
+</li>
+                                    
+<li>
+    <a href="../install-debian/" class="dropdown-item">Install on Debian</a>
+</li>
+                                    
+<li>
+    <a href="../install-nginx/" class="dropdown-item">Enable PHP in nginx</a>
+</li>
+                                    
+<li>
+    <a href="../install-lighttpd/" class="dropdown-item">Enable PHP in Lighttpd</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Install on Windows</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Update <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../update/update-linux/" class="dropdown-item">Update on linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">FAQ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../faq/" class="dropdown-item">FAQ</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../install-lighttpd/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../update/update-linux/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/PhotoboothProject/PhotoboothProject.github.io/blob/master/docs/install/install-windows.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installation-on-windows" class="nav-link">Installation on Windows</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#download-needed-files" class="nav-link">Download needed files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-extract-needed-software" class="nav-link">Install &amp; extract needed Software</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#prepare-apache-http-server" class="nav-link">Prepare Apache HTTP Server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#prepare-php" class="nav-link">Prepare PHP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#start-apache-server" class="nav-link">Start Apache Server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#test-your-webserver-php" class="nav-link">Test your Webserver &amp; PHP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-digicamcontrol" class="nav-link">Install Digicamcontrol</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#setup-photobooth" class="nav-link">Setup Photobooth</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enjoy" class="nav-link">Enjoy!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="installation-on-windows">Installation on Windows</h1>
+<h2 id="download-needed-files">Download needed files</h2>
+<ul>
+<li>Download Apache2 and Visual C++ Redistributable for Visual Studio: <a href="https://www.apachelounge.com/download">https://www.apachelounge.com/download</a></li>
+<li>Download PHP 8.2 (Thread Safe): <a href="https://windows.php.net/download">https://windows.php.net/download</a></li>
+<li>Download Digicamcontrol: <a href="http://digicamcontrol.com/download">http://digicamcontrol.com/download</a></li>
+<li>Download Notepad++: <a href="https://notepad-plus-plus.org/downloads">https://notepad-plus-plus.org/downloads</a></li>
+<li>Download latest Photobooth release (<em>photobooth-4.x.x.zip</em> or <em>photobooth-4.x.x.tar.gz</em> - <strong>Note:</strong> the <em>Source code</em> files won't work!): <a href="https://github.com/PhotoboothProject/photobooth/releases">https://github.com/PhotoboothProject/photobooth/releases</a></li>
+</ul>
+<h2 id="install-extract-needed-software">Install &amp; extract needed Software</h2>
+<ul>
+<li>Install Notepad++</li>
+<li>Install Visual C++ Redistributable for Visual Studio</li>
+<li>Extract the Apache2 ZIP (<em>httpd-2.4.X-winXX-XXXX.zip</em>) to C:/</li>
+<li>Extract the PHP ZIP to C:/php</li>
+</ul>
+<h2 id="prepare-apache-http-server">Prepare Apache HTTP Server</h2>
+<p>Edit <code>C:\Apache24\conf\httpd.conf</code> using <strong>Notepad++</strong><br />
+Find the following text (~ on line 284):</p>
+<pre><code>&lt;IfModule dir_module&gt;
+    DirectoryIndex index.html
+&lt;/IfModule&gt;
+</code></pre>
+<p>And change it to  </p>
+<pre><code>&lt;IfModule dir_module&gt;
+    DirectoryIndex index.html index.php
+&lt;/IfModule&gt;
+</code></pre>
+<p>To the end of the file add the following:  </p>
+<pre><code>LoadModule php_module &quot;C:/php/php8apache2_4.dll&quot;
+&lt;FilesMatch \.php$&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+
+PHPIniDir &quot;C:/php&quot;
+</code></pre>
+<p>For reference see <a href="https://github.com/PhotoboothProject/photobooth/commit/f260b49d2029825d33eb9d35ceda3f19423418db">f260b49</a></p>
+<p>Inside <code>C:\Apache24\htdocs</code> add a new file called <code>info.php</code> and add the following content:  </p>
+<pre><code>&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+<p>Inside C:\Apache24 create a new file called <code>cmd.bat</code> and add th following content:</p>
+<pre><code>cd &quot;C:\Apache24\bin&quot;
+cmd
+</code></pre>
+<h2 id="prepare-php">Prepare PHP</h2>
+<p>Go to <code>C:\php</code> and rename the <code>php.ini-production</code> to <code>php.ini</code>.</p>
+<p>Edit the <code>php.ini</code> using <strong>Notepad++</strong> to enable the GD library:<br />
+Find <code>;extension=fileinfo</code> and remove the <code>;</code> in front of the line.<br />
+Find <code>;extension=gd2</code> and remove the <code>;</code> in front of the line.<br />
+Find <code>;extension=mbstring</code> and remove the <code>;</code> in front of the line.<br />
+Find <code>;extension_dir = "ext"</code> and remove the <code>;</code> in front of the line and change it to <code>extension_dir = "C:/php/ext"</code>.</p>
+<p>For reference see <a href="https://github.com/PhotoboothProject/photobooth/commit/ff4259aece2094922c1d9b8fc2825fb44a710560">ff4259a</a></p>
+<h2 id="start-apache-server">Start Apache Server</h2>
+<p>Go to <code>C:\Apache24</code> and right click on the cmd.bat, choose "Run as administrator":<br />
+To start the Webserver on boot automatically, type <code>httpd.exe -k install</code>.</p>
+<p>Once that's done, lets start our webserver:<br />
+<code>httpd.exe -k start</code></p>
+<p>If you need to stop the webserver (e.g. if you like to change the <code>php.ini</code>):<br />
+<code>httpd.exe -k stop</code></p>
+<h2 id="test-your-webserver-php">Test your Webserver &amp; PHP</h2>
+<p>Open <a href="http://localhost/info.php">http://localhost/info.php</a> in your Browser, you should see the PHP Information page.</p>
+<h2 id="install-digicamcontrol">Install Digicamcontrol</h2>
+<p>Install Digicamcontrol to <code>C:\Apache24\htdocs\digicamcontrol\</code></p>
+<h2 id="setup-photobooth">Setup Photobooth</h2>
+<p>Remove all files inside <code>C:\Apache24\htdocs\</code>.<br />
+Next you need to extract the Photobooth Release-ZIP to <code>C:\Apache24\htdocs\</code>.  </p>
+<p>Open <a href="http://localhost/admin">http://localhost/admin</a> in your Browser and adjust your "<em>take picture command</em>" (inside the "<em>Commands</em>" section):<br />
+<code>C:\Apache24\htdocs\digicamcontrol\CameraControlCmd.exe /capture /filename %s</code></p>
+<h2 id="enjoy">Enjoy!</h2>
+<p>You should now be able to use Photobooth on your Windows machine!  </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

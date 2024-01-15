@@ -1,0 +1,30 @@
+site_name: PhotoboothProject
+site_url: https://photoboothproject.github.io/
+site_description: Photobooth Project documentation
+site_author: Photobooth Team
+
+repo_url: https://github.com/PhotoboothProject/PhotoboothProject.github.io
+edit_uri: blob/master/docs/
+
+theme:
+  name: mkdocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+  locale: en
+
+nav:
+  - Home: index.md
+  - Changelog: changelog.md
+  - Install:
+    - Prerequisites: install/prerequisites.md
+    - Supported Platforms and Cameras: install/supported_platformscand_cameras.md
+    - Install on Debian: install/install-debian.md
+    - Enable PHP in nginx: install/install-nginx.md
+    - Enable PHP in Lighttpd: install/install-lighttpd.md
+    - Install on Windows: install/install-windows.md
+  - Update:
+    - Update on linux: update/update-linux.md
+  - FAQ:
+    - FAQ: faq/index.md

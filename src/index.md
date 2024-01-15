@@ -14,12 +14,12 @@ _Latest development version:_
 
 ---
 
-# Photobooth v4
+# Photobooth
 
 A Photobooth web interface for Linux and Windows.
 
 Photobooth was initially developped by Andre Rinas to use on a Raspberry Pi, you can find his source [here](https://github.com/andreknieriem/photobooth).  
-In 2019 Andreas Blaesius picked up the work and continued to work on the source.  
+In 2019 Andreas Skomski picked up the work and continued to work on the source.  
 With the help of the community Photobooth grew to a powerfull Photobooth software with a lot of features and possibilities.
 
 

@@ -18,10 +18,9 @@ _Latest development version:_
 
 A Photobooth web interface for Linux and Windows.
 
-Photobooth was initially developped by Andre Rinas to use on a Raspberry Pi, you can find his source [here](https://github.com/andreknieriem/photobooth).  
-In 2019 Andreas Skomski picked up the work and continued to work on the source.  
+Photobooth was initially developped by Andre Rinas to use on a Raspberry Pi, you can find his source [here](https://github.com/andreknieriem/photobooth).
+In 2019 Andreas Skomski picked up the work and continued to work on the source.
 With the help of the community Photobooth grew to a powerfull Photobooth software with a lot of features and possibilities.
-
 
 # Contribute to this Webpage
 
@@ -50,7 +49,7 @@ It's been a while, but here's some news outside of our Community on Telegram.
 
 Actually the source code of Photobooth is rewritten in almost all sections of Photobooth and there's still some work left before Photobooth v5 can be released.
 
-Photobooth v4.4.0 was released! This release is meant as bugfix-release to fix some known bugs, retain Windows compatibility and to keep compatibility with the changed install steps on latest development version.  
+Photobooth v4.4.0 was released! This release is meant as bugfix-release to fix some known bugs, retain Windows compatibility and to keep compatibility with the changed install steps on latest development version.
 A few new features have made it inside this release, but more to come with the upcoming Photobooth v5!
 
 And don't worry! The current development version runs nicely and stable for most user! We are always happy about feedback and helping hands!
@@ -71,7 +70,6 @@ Thanks to everyone for being part of this community, your feedback and your help
 
 We hope you have a safe and relaxing christmas time!
 
-
 Your Photobooth-Team
 
 ---
@@ -80,13 +78,12 @@ Your Photobooth-Team
 
 Photobooth v4.3.1 released!
 
-Build dependencies have been updated and the process of taking an image was improved to optimize the timings between the single actions.  
-The visible countdown now is independent of the time we need to take an image, the defined offset will be respected now.  
-Also we now don't wait for the cheese message to end, the picture will be taken without waiting for it.  
+Build dependencies have been updated and the process of taking an image was improved to optimize the timings between the single actions.
+The visible countdown now is independent of the time we need to take an image, the defined offset will be respected now.
+Also we now don't wait for the cheese message to end, the picture will be taken without waiting for it.
 A small bug was fixed, where the shutter animation was started twice if an cheese image is used.
 
 Like always: The full Changelog can be found [here](changelog.md).
-
 
 Enjoy Photobooth v4.3.1!
 
@@ -97,7 +94,6 @@ Enjoy Photobooth v4.3.1!
 Photobooth v4.3.0 released!
 
 Some minor bugs have been fixed, build dependencies have been updated, new Features have been added.
-
 
 Like always: The full Changelog can be found [here](changelog.md).
 
@@ -111,13 +107,11 @@ Photobooth v4.2.0 released today!
 
 Some minor bugs have been fixed, PHPMailer and build dependencies have been updated.
 
-
 The full Changelog can be found [here](changelog.md).
 
 Enjoy Photobooth v4.2.0!
 
 ---
-
 
 ### 30 September 2022
 
@@ -166,4 +160,3 @@ Currently we’re preparing this webpage for you with all needed information. Al
 Stay tuned!
 
 ---
-

@@ -44,6 +44,23 @@ View all version changes [here](changelog.md).
 
 ## News
 
+### 09. January 2024
+
+It's been a while, but here's some news outside of our Community on Telegram.
+
+Actually the source code of Photobooth is rewritten in almost all sections of Photobooth and there's still some work left before Photobooth v5 can be released.
+
+Photobooth v4.4.0 was released! This release is meant as bugfix-release to fix some known bugs, retain Windows compatibility and to keep compatibility with the changed install steps on latest development version.  
+A few new features have made it inside this release, but more to come with the upcoming Photobooth v5!
+
+And don't worry! The current development version runs nicely and stable for most user! We are always happy about feedback and helping hands!
+
+Like always: The full Changelog can be found [here](changelog.md).
+
+Your Photobooth-Team
+
+---
+
 ### 24 December 2022
 
 Hey everyone!

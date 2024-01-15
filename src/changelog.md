@@ -9,6 +9,210 @@ An updated FAQ can always be found at [localhost/faq](http://localhost/faq).
 Please read the license notice [here](https://github.com/PhotoboothProject/photobooth/blob/dev/LICENSE_NOTICE).
 <hr>
 
+## 4.4.0 (09.01.2024)
+
+**Breaking changes**
+* requires Node.js v18.17.0 or newer
+* requires npm 9.6.7 or newer
+
+**General**
+  * api: get rid of deleteTmpPhoto
+  * cameracontrol.py: don't fail capturing images using Sony Cameras
+  * result screen: reload after all files have been deleted
+  * core: simplify print message handling
+  * core: define tempImageUrl if and where needed
+  * core: improve logging
+  * api (takePic): only log return value issues on loglevel > 1
+  * core/gallery: central QR modal handling
+  * config: move preview bsm to commands section
+  * preview: remove arrow functions
+  * config(cleanup): remove unused success messages
+  * api(previewCamera): use play or stop string instead true and false
+  * preview: combine api.startWebcam and api.stopPreviewVideo functions
+  * preview: adjust logging
+  * preview: fix preview TEST mode
+  * preview: fix checking for frame config
+  * test(preview): fix preview with cmd
+  * core(print): remove unneeded delay
+  * optimized keyboard trigger
+  * Remove fake buttons to trigger actions, use global functions instead
+  * core: simplify check to.clear timeout
+  * core: blur picture / collage buttons as needed
+  * core: we already blur printBtn after print
+  * livechroma: add notification via modal message on trigger via keyCode
+  * livechroma: adjust keyCode trigger handling
+  * core: adjust keyCode trigger handling
+  * logging: adjust some console log messages
+  * core: remove unneded focusSet on QR btn click
+  * config: remove collage only config, allow to enable/disable picture instead
+  * configsetup: define remotebuzzer server port first
+  * lib(applyText): remove unneeded if-else statements
+  * lib(applyText): add error handling, return unmodified resource on error
+  * lib(applyText): throw Exception if text can't be applied
+  * lib(applyFrame): add error handling, return unmodified resource on error
+   * lib(applyFrame): throw Exceptions if needed
+  * lib(polaroid): return unmodified resource on error
+  * lib(polaroid): throw exceptions if needed
+  * lib(resize): add try-catch-block to rotateResizeImage function
+  * lib(resize): throw exceptions on rotateResizeImage if needed
+  * lib(resize): add try-catch-block to resizeImage function
+  * lib(resize): throw exceptions where needed on resizeImage
+  * lib(resize): validate dimensions
+  * lib(resize): add try-catch-block to resizePngImage function
+  * lib(resize): validate dimensions on resizePngImage function
+  * lib(resize): throw exceptions where needed on resizePngImage function
+  * lib(resize): add try-catch-block to resizeCropImage function
+  * lib(resize): validate dimensions on resizeCropImage function
+  * lib(resize): try to clear cache on error
+  * lib(resize): adjust check if resize was possible
+  * lib (collage): only test file if needed
+  * js(tools): add print image function to reuse
+  * gulp: updated with ECMAScript Modules (ESM) syntax
+  * task: bind docker do port 80 and 443
+  * task: bump node version to v18 LTS and drop yarn
+  * task: only limit node and npm version by minimum versions
+  * package: switch to marked to formatt faq
+  * remotebuzzer server: log earlier
+  * remotebuzzer-server: update sanity check, only check if needed
+  * remotebuzzer-server: allow GPIO to be any number [](https://github.com/PhotoboothProject/photobooth/pull/529)
+
+**Bugfix**
+  * fix: start shutter animation independent of cheese image
+  * cameracontrol.py: don't fail capturing images using Sony Cameras
+  * core: fix Test value for CameraDisplayMode
+  * test preview: fix Test value for CameraDisplayMode
+  * UI
+    * UI: use highlight color for hover
+    * gallery: respect button and font color
+    * Prettier display delete status
+    * ui: adjust modal transparency and font-weight
+    * core: use own div for general different modal messages
+    * delete: adjust delete notification messages
+    * style: use secondary color for backgrounds where needed
+    * task: fix colors while processing images [](https://github.com/PhotoboothProject/photobooth/pull/375)
+    * ui(gallery): only show 3 images in a row on mobile phones
+  * core: fix delete on collage with interruption
+  * Check if images array is empty
+  * Standalone Gallerie: add missing js file
+  * core(fix): init PhotoSwipe after remoteBuzzer
+  * api (takePic): only abort if file was not created
+  * preview: respect offset to hide preview
+  * preview: respect offset to hide preview from URL
+  * slideshow: clear timeout to prevent from running timeout multiple times
+  * remotebuzzer server: Determine whether or not GPIO access is possible
+    * remotebuzzer server: fix checking for gpio config
+  * welcome: use index.php instead of detected URL
+  * api (admin): don't reset log on preview config error
+  * core(preview): remove preview mode check if image is captured from preview
+  * core: check for preview stream instead use of demo images
+  * core(preview): stop preview on countdown slightly earlier
+  * remotebuzzer server: fix for Node.js v16
+  * submodules: ignore dirty state
+  * core: hide result screen on reset
+  * remotebuzzer client: fix log
+  * Revert "stabilized rotary encoder handling"
+  * remotebuzzer client: handle QR in gallery
+  * remotebuzzer client: close qr modals directly if needed
+  * added explicit int conversion
+  * gallery: Collage only config was removed
+  * sync-to-drive: fix for Node.js v16
+    * Sync more Filetypes
+  * lib(config): adjust print command for Windows
+  * api (previewCamera): $config is not available, remove logging for now
+  * remotebuzzer: respect config also on get request trigger
+  * remotebuzzer: don't trigger a different action if disabled
+  * remotebuzzer client: check if taking pictures is enabled
+  * trigger.php: add missing options, respect hardware button config
+  * lib (db): fix for PHP 8
+  * api(admin): check if fonts, frames and collage placeholder are valid
+  * core: clear/reset timeout on keyup [](https://github.com/PhotoboothProject/photobooth/pull/226)
+  * lib (image): fix applying text to images, fail if text CAN NOT be applied
+  * lib(image): don't keep aspect ratio while resizing PNG
+  * bugfix: supprress error messages on getimagesize function
+  * api(admin): image filter depends on images in tmp folder
+  * fix hiding/showing home button independent of button bar on result screen
+  * index (frame): respect preview frame config
+  * core: don't add images to gallery if gallery is disabled
+  * core: print & qr code only if enabled
+  * bugfix: update dockerfile
+    * add missing python3
+  * lib(resize): fix rotating images on PHP8
+
+**Feature**
+  * config: make time adjustable a notification is visible
+  * preview: allow to delay the visibility of the preview from URL
+  * preview: allow execution of start/stop cmd without validation
+    * config: run preview CMD's without validation by default
+  * preview: run preview cmd & stop cmd independent of preview mode
+  * remotebuzzer: make print and rotary functions available via get request
+  * remotebuzzer: Reboot Button
+  * remotebuzzer: make shutdown and reboot available via get request
+  * task: enable lazy loading for gallery images [](https://github.com/PhotoboothProject/photobooth/pull/383)
+
+**FAQ**
+  * FAQ: add note to fix broken v4l2loopback module [](https://github.com/PhotoboothProject/photobooth/pull/109)
+  * FAQ: add notes about issues while taking a picture
+  * faq: a username is needed while running enable-usb-sync.sh
+  * Updated FAQ - how to upload pictures to remote server [](https://github.com/PhotoboothProject/photobooth/pull/127)
+  * FAQ: preview bsm was moved
+  * FAQ: no need for success message
+  * FAQ: add instructions to update gphoto2 & libgphoto
+  * FAQ: adjust PiCamera information [](https://github.com/PhotoboothProject/photobooth/pull/417)
+  * FAQ: Add possible preview error because of secure boot [](https://github.com/PhotoboothProject/photobooth/pull/437)
+  * FAQ: adjust GPIO setup for PiOS Bookworm
+  * FAQ: adjust GPIO information for Raspberry Pi 5; adjust for Pi OS versions
+
+**Install**
+  * install: adjust PolKit rule naming
+  * install-photobooth: allow to add PolKit rule on all linux distros
+  * install-photobooth: PolKit rule doesn't depend on update
+  * install-photobooth: make system update optional on photobooth update
+  * install-photobooth: fix permissions on yarn folder
+  * install-photobooth: easy access to private folder
+  * install-photobooth: always ignore filemode changes on git
+  * install-photobooth: allow Node.js minor version to match or be newer
+  * install-photobooth: be flexible on Node.js version
+  * install: yarn: use of apt-key is deprecated
+  * install-photobooth: use PHP 8.2 by default
+  * install-photobooth: PHP8 sources needed earlier
+  * install-photobooth: add https://packages.sury.org/php/ only if distro is supported
+  * install: also run apt autoremove while removing nodejs
+  * install: switch to latest development version of Gphoto2
+  * install: fix PHP8 install in Ubuntu 20
+  * install-photobooth: improve/fix PHP8 install on Ubuntu
+  * install-photobooth: fix missing sources.lst on Ubuntu 22.04
+  * install-photobooth: install npm on Raspberry Pi
+    * bugfix: correct installer
+  * install: add ppa for PHP on all Debian based distributions
+  * install: run commands as www-data user
+  * install: install needed packages for gphoto2 webcam service only if needed
+  * install: use wget to check internet connection
+  * install: update nodejs install
+  * install: suppress most progress infos, only display essential output
+  * install: fix permissions for www-data user on install
+  * install: check for npm on all devices
+  * install: remove npm from packages, uninstall libnode72 if installed
+  * install: update npm to latest
+  * install: fix Download of node-install (Raspberry Pi)
+  * install: also check NODEJS_MINOR version
+  * install: always install nodejs from official node source
+  * install: only fail on Node.js below v18, recheck version if update is skipped
+  * install: proof npm version, abort if needed
+  * install: fix checking npm version
+  * install: check for Firefox browser first
+  * install: also check for firefox-esr
+  * install-photobooth: remove autostart and hide mouse
+    * installer: remove leftover from removed questions/features
+  * install-photobooth: don't compile gphoto2 and libgphoto2 [](https://github.com/PhotoboothProject/photobooth/pull/439)
+  * install: check if /boot/config.txt is a symlink [](https://github.com/PhotoboothProject/photobooth/pull/465)
+  * install-photobooth: adjust Update for www-data user [](https://github.com/PhotoboothProject/photobooth/pull/498)
+  * install-photobooth: install npm 9.6.7 if needed [](https://github.com/PhotoboothProject/photobooth/pull/531)
+
+**Full Changelog**:
+
+ [https://github.com/PhotoboothProject/photobooth/compare/v4.3.1...v4.4.0](https://github.com/PhotoboothProject/photobooth/compare/v4.3.1...v4.4.0)
+
+<hr>
 
 ## 4.3.1 (06.12.2022)
 

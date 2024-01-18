@@ -6,7 +6,7 @@ site_author: Photobooth Team
 repo_url: https://github.com/PhotoboothProject/PhotoboothProject.github.io
 edit_uri: blob/master/src/
 
-docs_dir: photobooth
+docs_dir: photobooth/faq
 site_dir: docs
 
 theme:
@@ -20,4 +20,4 @@ theme:
 
 nav:
   - FAQ:
-    - FAQ: faq/faq.md
+    - FAQ: faq.md

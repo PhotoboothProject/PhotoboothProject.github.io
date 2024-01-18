@@ -3,11 +3,11 @@ site_url: https://photoboothproject.github.io/
 site_description: Photobooth Project documentation
 site_author: Photobooth Team
 
-repo_url: https://github.com/PhotoboothProject/PhotoboothProject.github.io
-edit_uri: blob/master/src/
+repo_url: https://github.com/PhotoboothProject/photobooth
+edit_uri: blob/master/docs/
 
-docs_dir: photobooth/faq
-site_dir: docs
+docs_dir: photobooth/docs
+site_dir: site
 
 theme:
   name: readthedocs
@@ -18,6 +18,26 @@ theme:
     - rust
   locale: en
 
+extra_css:
+  - assets/css/extra.css
+
 nav:
+  - Home: index.md
+  - Changelog: changelog.md
+  - Security Policy: security.md
+  - Install:
+    - Prerequisites: install/prerequisites.md
+    - Supported Platforms and Cameras: install/supported_platformscand_cameras.md
+    - Install on Debian: install/install-debian.md
+    - Enable PHP in nginx: install/install-nginx.md
+    - Enable PHP in Lighttpd: install/install-lighttpd.md
+    - Install on Windows: install/install-windows.md
+  - Update:
+    - Update on linux: update/update-linux.md
   - FAQ:
-    - FAQ: faq.md
+    - FAQ: faq/index.md
+  - Community & Contribution:
+    - Chat on Telegram: https://t.me/PhotoboothGroup
+    - Contributor Covenant Code of Conduct: code_of_conduct.md
+    - Translate Photobooth: https://crowdin.com/project/photobooth
+  - Donation: donation.md

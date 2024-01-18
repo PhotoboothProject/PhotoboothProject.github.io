@@ -1,0 +1,23 @@
+site_name: Photobooth Project
+site_url: https://photoboothproject.github.io/
+site_description: Photobooth Project documentation
+site_author: Photobooth Team
+
+repo_url: https://github.com/PhotoboothProject/PhotoboothProject.github.io
+edit_uri: blob/master/src/
+
+docs_dir: photobooth
+site_dir: docs
+
+theme:
+  name: readthedocs
+  nav_style: dark
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+  locale: en
+
+nav:
+  - FAQ:
+    - FAQ: faq/faq.md

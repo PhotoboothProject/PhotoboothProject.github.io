@@ -1,13 +1,16 @@
 name: Publish remote docs via GitHub Pages
 on:
-    workflow_dispatch:
+  schedule:
+    # Run every saturday at 00:00
+    - cron: '0 0 * * 6'
+  workflow_dispatch:
 
 jobs:
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
+      - name: Checkout master
         uses: actions/checkout@v4
       - name: Checkout photobooth
         uses: actions/checkout@v4
@@ -15,7 +18,7 @@ jobs:
           repository: PhotoboothProject/photobooth
           path: photobooth
           submodules: true
-      - name: Deploy docs
+      - name: Deploy and publish docs
         uses: andi34/mkdocs-deploy-gh-pages@nomaterial
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

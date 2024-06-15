@@ -34,8 +34,9 @@ nav:
     - Install on Windows: install/install-windows.md
   - Update:
     - Update on linux: update/update-linux.md
-  - FAQ:
+  - FAQ & Tutorials:
     - FAQ: faq/index.md
+    - Tutorials: faq/tutorials.md
   - Community & Contribution:
     - Chat on Telegram: https://t.me/PhotoboothGroup
     - Contributor Covenant Code of Conduct: code_of_conduct.md

@@ -4,7 +4,7 @@ site_description: Photobooth Project documentation
 site_author: Photobooth Team
 
 repo_url: https://github.com/PhotoboothProject/photobooth
-edit_uri: blob/master/docs/
+edit_uri: blob/dev/docs/
 
 docs_dir: photobooth/docs
 site_dir: site
